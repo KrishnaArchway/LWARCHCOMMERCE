@@ -1,0 +1,20 @@
+<DataSource
+	ID="SCEAOrderItems" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEAOrderedItemsDMI">	
+	
+	<fields>
+			<field name="strItemNum"  		 	type="text"       title="Item #"/>
+	  		<field name="strDescription"    	type="text"       title="Description"/>
+			<field name="intQty" 				type="text"       title="Qty"/>
+			<field name="intQtyShipped" 		type="text"       title="Qty Shipped"/>
+			<field name="intToBeShipped"		type="text"       title="To Be Shipped"/>			
+      		<field name="strStatus"				type="text"       title="Status"/>					
+	</fields>	
+	
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchOrderedItems"/>
+		
+	</operationBindings>
+</DataSource>

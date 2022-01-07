@@ -1,0 +1,52 @@
+<DataSource
+    ID="ESOrderedItem"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.estore.dmi.ESOrderedItemDMI">
+  
+    <fields>
+		<field name="intClientId" title="ClientId" width="85" type="int" />
+		<field name="strOrderNumber" title="Order#" width="85" type="text" foreignKey="ESOrderStatus.strOrderNumber" />
+		<field name="lngItemId" title="Order Item Id" width="85" type="long" primaryKey="true" />
+		<field name="strStockNumber" title="Stock#" width="120" type="text" />
+		<field name="strKitVersion" title="Version" width="120" type="text" />
+		<field name="strShippedItemId" title="Shipped Item Id" width="120" type="text" />
+		<field name="strShippedStockNumber" title="Shipped Stock#" width="*" type="text" />
+		<field name="strShippedVersion" title="Shipped Version" width="85" type="text" />
+		<field name="strItemStatus" title="Item Status" width="80" type="text" />
+		
+		<field name="strItemStatusDesc" title="Item Status" width="120" type="text" />
+		<field name="dblUnitCost" title="Unit Cost" width="85" type="double" />
+		<field name="dblUnitPrice" title="Unit Price" width="85" type="double" />
+		<field name="strTaxable" title="Taxable" width="85" type="text" />
+		<field name="strBillable" title="Billable" width="85" type="text" />
+		
+		<field name="strDropShipFlag" title="Drop Ship" width="85" type="text" />
+		<field name="lngOrderedQty" title="Ordered Quantity" width="120" type="long" />
+		<field name="lngOrderedOrigionalQty" title="Origional Qty Ordered" width="250" type="long" />
+		<field name="lngShippedQty" title="Shipped Qty" width="120" type="long" />
+		<field name="strJobNumber" title="Job#" width="85" type="text" />
+		
+		<field name="strW2PCustomizationId" title="W2P Cust ID" width="85" type="text" />
+		<field name="strW2POrderNumber" title="W2POrder#" width="85" type="text" />
+		
+		<field name="strUofM" title="UofM" width="85" type="text" />
+		<field name="strUofMDesc" title="UofMDesc" width="85" type="text" />
+		<field name="intUofMQty" title="UofMQty" width="85" type="text" />
+		<field name="strComments" title="Comments" width="85" type="text" />
+		<field name="strUPC" title="UPC" width="85" type="text" />
+		<field name="strOrderedItemDescription" type="text" />
+		
+		
+		<field name="strCreatedBy" type="text" title="Created By" /> 
+        
+        <field name="dtCreationDate" type="date" title="Creation Date" useTextField="true"/> 
+        
+        <field name="strLastUpdatedBy" type="text" title="Last Updated By" /> 
+        
+        <field name="dtLastUpdateDate" type="date" title="Last Updated Date" useTextField="true"/>
+	</fields>
+    
+    <operationBindings>
+    	<operationBinding operationType="fetch"  archServerMethod="fetchOrderedItem" />   	
+    </operationBindings>
+</DataSource>

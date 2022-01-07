@@ -1,0 +1,79 @@
+<DataSource ID="LWInstoreFeedback" serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWInstoreFeedbackDMI">	
+	
+	<fields>
+		<field name="intlwPlgFeedBackId" type="text" primaryKey="true" />
+		<field name="strBayCount" type="text" value="Bay Count OK" width="150" >
+			<valueMap>
+				<value  ID="Bay Count OK">Bay Count OK</value>
+				<value  ID="1 Bay">1 Bay</value>
+				<value  ID="2 Bays">2 Bays</value>
+				<value  ID="3 Bays">3 Bays</value>
+				<value  ID="4 Bays">4 Bays</value>
+				<value  ID="5 Bays">5 Bays</value>
+				<value  ID="6 Bays">6 Bays</value>
+			</valueMap>
+		</field>
+		<field name="strBayHeight" type="text" value="Bay Height OK" width="170">
+			<valueMap>
+				<value  ID="Bay Height OK">Bay Height OK</value>
+				<value  ID="60">60</value>
+				<value  ID="96">96</value>
+				<value  ID="144">144</value>
+				<value  ID="192">192</value>
+				<value  ID="192 Gutless">192 Gutless</value>
+			</valueMap>
+		</field>
+		<field name="strBayWidth"  type="text" value="Bay Width OK" width="170">
+			<valueMap>
+				<value  ID="Bay Width OK">Bay Width OK</value>
+				<value  ID="49">49</value>
+				<value  ID="60">60</value>
+				<value  ID="73">73</value>
+				<value  ID="84">84</value>
+				<value  ID="90">90</value>
+				<value  ID="97">97</value>
+				<value  ID="102">102</value>
+				<value  ID="108">108</value>
+				<value  ID="120">120</value>
+				<value  ID="124">124</value>
+				<value  ID="148">148</value>
+				<value  ID="156">156</value>
+			</valueMap>
+		</field>
+		<field name="strBayDepth" type="text" value="Bay Depth OK" width="170">
+			<valueMap>
+				<value  ID="Bay Depth OK">Bay Depth OK</value>
+				<value  ID="12">12</value>
+				<value  ID="24">24</value>
+				<value  ID="28">28</value>
+				<value  ID="34">34</value>
+				<value  ID="42">42</value>
+				<value  ID="48">48</value>
+				<value  ID="60">60</value>
+				<value  ID="72">72</value>
+			</valueMap>
+		</field> 
+		<field name="strBayHandling" type="text" value="Bay Handing OK" width="170">
+			<valueMap>
+				<value  ID="Bay Handing OK">Bay Handing OK</value>
+				<value  ID="Right Hand">Right Hand</value>
+				<value  ID="Left Hand">Left Hand</value>
+			</valueMap>
+		</field> 
+		<field name="strAssortmentSkus" type="textArea" width="300" >
+			<validators>
+                <validator type="lengthRange" min="0" max="4000" errorMessage="Only 4000 charater supported for Assortment SKUS"/>
+            </validators>
+        </field> 
+		<field name="strComments" type="textArea" width="300">
+			<validators>
+                <validator type="lengthRange" min="0" max="4000" errorMessage="Only 4000 charater supported for Comments"/>
+            </validators>
+		</field> 
+	</fields>
+	<operationBindings>
+		<operationBinding operationType="add"  archServerMethod="com.archway.lowes.dmi.LWInstoreFeedbackDMI.addFeedback"/> 	
+	</operationBindings>
+</DataSource>
+

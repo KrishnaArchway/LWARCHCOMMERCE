@@ -1,0 +1,51 @@
+<DataSource
+    ID="ESOrderPacking"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.estore.dmi.ESOrderPackingDMI">
+  
+    <fields>
+		<field name="intClientId" title="ClientId" width="85" type="int" />
+		<field name="strPackingId" title="Packing Id" width="85" type="text" primaryKey="true" />
+		<field name="strOrderNumber" title="Order#" width="85" type="text" foreignKey="ESOrderStatus.strOrderNo" />
+		<field name="strPackageNumber" title="Package#" width="100" type="int" />
+		<field name="strPackageStatus" title="Package Status" width="85" type="text" />		
+		<field name="dtShipDate" type="date" title="Ship Date" useTextField="true"/>
+		
+		<field name="strActualCarrier" title="Actual Carrier" width="150" type="text" />	
+		<field name="strActualShipmentType" title="Actual Shipment Type" width="85" type="text" />	
+		<field name="strShipmentTypeId" title="Shipment Type" width="85" type="text" />	
+		<!-- <field name="strTrackingNumber" title="Tracking Number" width="*" type="link" target="http://www.fedex.com/Tracking?cntry_code=us" /> -->
+		<field name="strTrackingNumber" title="Tracking Number" width="*" type="text" />	
+		<field name="dtEstimatedArrivalDate" type="date" title="Estimated Arrival Date" useTextField="true"/>
+		
+		
+		<field name="dtActualdArrivalDate" type="date" title="Actual Arrival Date" useTextField="true"/>
+        <field name="strSignBy" title="Sign By" width="85" type="text" />
+        <field name="strStockDesc" title="Stock Desc" width="85" type="text" />
+        <field name="strEstoreStockDesc" title="Estore Stock Desc" width="85" type="text" />
+        <field name="strUofM" title="UOM" width="85" type="text" />
+        
+        <field name="strUofMDesc" title="UOM Desc" width="85" type="text" />
+        <field name="intUofMQty" title="UOM Qty" width="85" type="int" />
+        <field name="strComments" title="Comments" width="85" type="text" />
+        <field name="strCardType" title="Cart Type" width="85" type="text" />
+        <field name="strUPC" title="UPC" width="85" type="text" />
+				
+		<field name="strCreatedBy" type="text" title="Created By" /> 
+        
+        <field name="dtCreationDate" type="date" title="Creation Date" useTextField="true"/> 
+        
+        <field name="strLastUpdatedBy" type="text" title="Last Updated By"  /> 
+        
+        <field name="dtLastUpdateDate" type="date" title="Last Updated Date"  useTextField="true"/>		
+    </fields>
+    
+    <operationBindings>
+    	<operationBinding operationType="fetch"  archServerMethod="fetchOrderPacking" />   	
+    </operationBindings>
+</DataSource>
+
+
+	
+
+	

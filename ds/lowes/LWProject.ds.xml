@@ -1,0 +1,780 @@
+<DataSource
+	ID="LWProject" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWProjectDMI">
+	
+	<fields>
+		<field name="strActionMenu"         type="text"    	title="Actions" />
+		<field name="intClientId"           type="integer" 	title="Client Id" />
+		<field name="strAccordionSection"   type="text"    	title="Project" />
+		<field name="lngProjectID" 			type="long" 	title="Project ID" primaryKey="true" />
+		<field name="strProjectRequestor" 	type="text" 	title="Project Requestor" >
+			<validators>
+				<validator type="lengthRange" min="0" max="240" errorMessage="Please enter Project Requestor with max length 240 only"/>
+			</validators>
+		</field>
+		<field name="strProjectStatus" 		type="text" 	title="Project Status">
+			<valueMap>
+				<value ID="A">Active</value>
+				<value ID="P">Active</value>
+				<value ID="C">Closed</value>
+				<value ID="X">Closed</value>
+				<value ID="N">Closed</value>
+				<value ID="H">Closed</value>
+				<value ID="D">Deleted</value>
+			</valueMap>
+		</field>
+		<field name="dtStartDate" 			type="date" 	title="Start Date" 	/>
+		<field name="dtEndDate" 			type="date" 	title="End Date" />
+		<field name="strProjectNumber" 		type="text" 	title="Project Number" 	keyPressFilter="[0-9.]"	/>
+		<field name="strProjectName" 		type="text" 	title="Project Name" >
+			<validators>
+				<validator type="lengthRange" min="0" max="1000" errorMessage="Please enter Project Name with max length 1000 only"/>
+			</validators>
+		</field>
+		<field name="strProjectDesc" type="text" title="Project Description">
+			<validators>
+                <validator type="lengthRange" min="0" max="1000" errorMessage="Please enter Project Description with max length 1000 only"/>
+            </validators>
+		</field>
+		<field name="strDivision" type="text" title="Division" >
+			<valueMap>
+				<value ID="APPLIANCES">APPLIANCES</value>
+				<value ID="BUILDING MATERIALS">BUILDING MATERIALS</value>
+				<value ID="CABINETS &amp; COUNTERTOPS">CABINETS &amp; COUNTERTOPS</value>
+				<value ID="CORPORATE">CORPORATE</value>
+				<value ID="FASHION ELECTRICAL">FASHION ELECTRICAL</value>
+				<value ID="FASHION PLUMBING">FASHION PLUMBING</value>
+				<value ID="FLOORING">FLOORING</value>
+				<value ID="HARDWARE">HARDWARE</value>
+				<value ID="HOME FASHIONSSTORAGE&amp;CLEANING">HOME FASHIONSSTORAGE&amp;CLEANING</value>
+				<value ID="LAWN &amp; GARDEN">LAWN &amp; GARDEN</value>
+				<value ID="LUMBER">LUMBER</value>
+				<value ID="MILLWORK">MILLWORK</value>
+				<value ID="NURSERY">NURSERY</value>
+				<value ID="PAINT">PAINT</value>
+				<value ID="ROUGH PLUMBING">ROUGH PLUMBING</value>
+				<value ID="SEASONAL LIVING">SEASONAL LIVING</value>	
+			</valueMap>
+		</field>
+		<field name="strSubDivision" type="text" title="Sub Division" >			
+			<valueMap>
+				<value ID="APPLICATORS">APPLICATORS</value>
+				<value ID="BLOCK SOIL MULCH AND HOUSE PLANTS">BLOCK SOIL MULCH AND HOUSE PLANTS</value>
+				<value ID="BOARDS &amp; PROJECT PANELS">BOARDS &amp; PROJECT PANELS</value>
+				<value ID="BUILDERS HARDWARE">BUILDERS HARDWARE</value>
+				<value ID="BUILT-IN COOKING &amp; SOS APPLIANCES">BUILT-IN COOKING &amp; SOS APPLIANCES</value>
+				<value ID="CAN-BENCHTOP/STATIONARY TOOLS">CAN-BENCHTOP/STATIONARY TOOLS</value>
+				<value ID="CAN-BOARDS AND PROJECT PANELS">CAN-BOARDS AND PROJECT PANELS</value>
+				<value ID="CAN-BUILDERS HARDWARE">CAN-BUILDERS HARDWARE</value>
+				<value ID="CAN-BUILT-IN COOKING &amp; SOS APPLIANCES">CAN-BUILT-IN COOKING &amp; SOS APPLIANCES</value>
+				<value ID="CAN-CARPETS">CAN-CARPETS</value>
+				<value ID="CAN-CAULK/ADHESIVES/REPAIR">CAN-CAULK/ADHESIVES/REPAIR</value>
+				<value ID="CAN-CEILING FANS">CAN-CEILING FANS</value>
+				<value ID="CAN-CEMENT/SP METALS/ASPHALT COATINGS">CAN-CEMENT/SP METALS/ASPHALT COATINGS</value>
+				<value ID="CAN-CERAMICS">CAN-CERAMICS</value>
+				<value ID="CAN-CLEANING &amp; STORAGE">CAN-CLEANING &amp; STORAGE</value>
+				<value ID="CAN-DECOR LIGHTING">CAN-DECOR LIGHTING</value>
+				<value ID="CAN-ELECTRICAL WIRE/BOXES/SWITCHGEAR">CAN-ELECTRICAL WIRE/BOXES/SWITCHGEAR</value>
+				<value ID="CAN-ENTRY &amp; INTERIOR DOORS">CAN-ENTRY &amp; INTERIOR DOORS</value>
+				<value ID="CAN-FABRIC CARE">CAN-FABRIC CARE</value>
+				<value ID="CAN-FASHION HARDWARE">CAN-FASHION HARDWARE</value>
+				<value ID="CAN-FAUCETS">CAN-FAUCETS</value>
+				<value ID="CAN-FENCING">CAN-FENCING</value>
+				<value ID="CAN-FOOD PREPARATION AND CLEANING">CAN-FOOD PREPARATION AND CLEANING</value>
+				<value ID="CAN-FOOD PRESERVATION">CAN-FOOD PRESERVATION</value>
+				<value ID="CAN-GARAGE DOORS &amp; OPERATORS">CAN-GARAGE DOORS &amp; OPERATORS</value>
+				<value ID="CAN-GARDEN HARDLINES">CAN-GARDEN HARDLINES</value>
+				<value ID="CAN-GENERAL HARDWARE">CAN-GENERAL HARDWARE</value>
+				<value ID="CAN-GRILLS &amp; GRILL ACCESSORIES">CAN-GRILLS &amp; GRILL ACCESSORIES</value>
+				<value ID="CAN-GYPSUM/CEILINGS/LADDERS/GUTTER">CAN-GYPSUM/CEILINGS/LADDERS/GUTTER</value>
+				<value ID="CAN-HAND HELD POWER TOOLS">CAN-HAND HELD POWER TOOLS</value>
+				<value ID="CAN-HAND TOOLS AND TOOL STORAGE">CAN-HAND TOOLS AND TOOL STORAGE</value>
+				<value ID="CAN-HEAT/FANS/EVAPS">CAN-HEAT/FANS/EVAPS</value>
+				<value ID="CAN-HEATING, AIR AND WATER">CAN-HEATING, AIR AND WATER</value>
+				<value ID="CAN-HOME COMFORT">CAN-HOME COMFORT</value>
+				<value ID="CAN-HOME ENHANCEMENTS/BIRD">CAN-HOME ENHANCEMENTS/BIRD</value>
+				<value ID="CAN-HOME SECURITY">CAN-HOME SECURITY</value>
+				<value ID="CAN-LADDERS AND POLYETHYLENE">CAN-LADDERS AND POLYETHYLENE</value>
+				<value ID="CAN-LAWN CARE">CAN-LAWN CARE</value>
+				<value ID="CAN-LIGHT BULBS AND UTILITY LIGHTING">CAN-LIGHT BULBS AND UTILITY LIGHTING</value>
+				<value ID="CAN-LIVE GOODS">CAN-LIVE GOODS</value>
+				<value ID="CAN-MOULDINGS &amp; SPECIALTY MILLWORK">CAN-MOULDINGS &amp; SPECIALTY MILLWORK</value>
+				<value ID="CAN-MOWER PARTS AND FALL/SNOW CLEANUP">CAN-MOWER PARTS AND FALL/SNOW CLEANUP</value>
+				<value ID="CAN-MOWERS/SNOW/ATTACH/PARTS">CAN-MOWERS/SNOW/ATTACH/PARTS</value>
+				<value ID="CAN-MULCH, SOIL, STONE AND SEED">CAN-MULCH, SOIL, STONE AND SEED</value>
+				<value ID="CAN-MULTIMEDIA/WIRING TOOLS AND MATL">CAN-MULTIMEDIA/WIRING TOOLS AND MATL</value>
+				<value ID="CAN-ORGANIZATION, SHELVING &amp; FURNITURE">CAN-ORGANIZATION, SHELVING &amp; FURNITURE</value>
+				<value ID="CAN-OUTDOOR FASHIONS">CAN-OUTDOOR FASHIONS</value>
+				<value ID="CAN-OUTDOOR LIGHTING">CAN-OUTDOOR LIGHTING</value>
+				<value ID="CAN-P.WASH/TILL./GEN./HANDHELD OPE">CAN-P.WASH/TILL./GEN./HANDHELD OPE</value>
+				<value ID="CAN-PAINT">CAN-PAINT</value>
+				<value ID="CAN-PATIO &amp; POOL">CAN-PATIO &amp; POOL</value>
+				<value ID="CAN-PATIO BLOCK, SOILS &amp; MULCH">CAN-PATIO BLOCK, SOILS &amp; MULCH</value>
+				<value ID="CAN-PIPE AND FITTINGS">CAN-PIPE AND FITTINGS</value>
+				<value ID="CAN-PLAY EQUIP &amp; PET CONTAINMENT">CAN-PLAY EQUIP &amp; PET CONTAINMENT</value>
+				<value ID="CAN-PLUMBING AND BATHING FIXTURES">CAN-PLUMBING AND BATHING FIXTURES</value>
+				<value ID="CAN-PLUMBING REPAIR AND SUPPLIES">CAN-PLUMBING REPAIR AND SUPPLIES</value>
+				<value ID="CAN-PLYWOOD">CAN-PLYWOOD</value>
+				<value ID="CAN-PLYWOOD &amp; OUTDOOR STORAGE">CAN-PLYWOOD &amp; OUTDOOR STORAGE</value>
+				<value ID="CAN-PNEUMATICS AND SHOP EQUIPMENT">CAN-PNEUMATICS AND SHOP EQUIPMENT</value>
+				<value ID="CAN-PORTABLE APPLIANCES">CAN-PORTABLE APPLIANCES</value>
+				<value ID="CAN-ROOFING/VENTILATION">CAN-ROOFING/VENTILATION</value>
+				<value ID="CAN-RUGS">CAN-RUGS</value>
+				<value ID="CAN-SHELVING/GARAGE/KITCHEN/LAUNDRY">CAN-SHELVING/GARAGE/KITCHEN/LAUNDRY</value>
+				<value ID="CAN-SIDING/INSULATION">CAN-SIDING/INSULATION</value>
+				<value ID="CAN-SOS AND RETAIL ENVIRONMENT">CAN-SOS AND RETAIL ENVIRONMENT</value>
+				<value ID="CAN-SOS COUNTER TOPS">CAN-SOS COUNTER TOPS</value>
+				<value ID="CAN-SOS KIT CABINETS">CAN-SOS KIT CABINETS</value>
+				<value ID="CAN-SOS MGW COUNTERTOPS">CAN-SOS MGW COUNTERTOPS</value>
+				<value ID="CAN-SPECIALTIES/APPLICATORS">CAN-SPECIALTIES/APPLICATORS</value>
+				<value ID="CAN-SPECIALTY BATH">CAN-SPECIALTY BATH</value>
+				<value ID="CAN-STOCK CABINETS AND COUNTERTOPS">CAN-STOCK CABINETS AND COUNTERTOPS</value>
+				<value ID="CAN-STORM PRODUCT,GARAGE DOORS&amp;OPERATOR">CAN-STORM PRODUCT,GARAGE DOORS&amp;OPERATOR</value>
+				<value ID="CAN-STORM PRODUCTS">CAN-STORM PRODUCTS</value>
+				<value ID="CAN-STRUCTURAL LUMBER">CAN-STRUCTURAL LUMBER</value>
+				<value ID="CAN-SUNDRIES/SPRAYERS">CAN-SUNDRIES/SPRAYERS</value>
+				<value ID="CAN-TRACK AND PORTABLE LIGHTING">CAN-TRACK AND PORTABLE LIGHTING</value>
+				<value ID="CAN-TREATED LUMBER">CAN-TREATED LUMBER</value>
+				<value ID="CAN-VANITIES AND ACCESSORIES">CAN-VANITIES AND ACCESSORIES</value>
+				<value ID="CAN-WALL AND FASHION COORDINATES">CAN-WALL AND FASHION COORDINATES</value>
+				<value ID="CAN-WINDOW TREATMENTS">CAN-WINDOW TREATMENTS</value>
+				<value ID="CAN-WINDOWS, PATIO DOORS &amp; SKYLIGHTS">CAN-WINDOWS, PATIO DOORS &amp; SKYLIGHTS</value>
+				<value ID="CAN-WIRING DEVICES/CORDS/SURGE">CAN-WIRING DEVICES/CORDS/SURGE</value>
+				<value ID="CAN-WOOD/RUGS">CAN-WOOD/RUGS</value>
+				<value ID="CARPET AND VINYL">CARPET AND VINYL</value>
+				<value ID="CEILING FANS AND OUTDOOR LIGHTING">CEILING FANS AND OUTDOOR LIGHTING</value>
+				<value ID="CEMENT/SP METALS/ASPHALT COATINGS">CEMENT/SP METALS/ASPHALT COATINGS</value>
+				<value ID="CERAMICS">CERAMICS</value>
+				<value ID="CLEANING AND STORAGE">CLEANING AND STORAGE</value>
+				<value ID="COATINGS">COATINGS</value>
+				<value ID="DECOR LIGHTING">DECOR LIGHTING</value>
+				<value ID="DOORS ENTRY INTERIOR STORM">DOORS ENTRY INTERIOR STORM</value>
+				<value ID="ELECTRICAL WIRE BOXES SWITCHGEAR">ELECTRICAL WIRE BOXES SWITCHGEAR</value>
+				<value ID="FABRIC CARE">FABRIC CARE</value>
+				<value ID="FASHION COORDINATES">FASHION COORDINATES</value>
+				<value ID="FASHION HARDWARE">FASHION HARDWARE</value>
+				<value ID="FAUCETS AND BATH DECOR">FAUCETS AND BATH DECOR</value>
+				<value ID="FENCING AND OUTDOOR STORAGE">FENCING AND OUTDOOR STORAGE</value>
+				<value ID="FOOD PREPARATION AND CLEANING">FOOD PREPARATION AND CLEANING</value>
+				<value ID="FOOD PRESERVATION">FOOD PRESERVATION</value>
+				<value ID="GARAGE DOORS &amp; OPERATORS">GARAGE DOORS &amp; OPERATORS</value>
+				<value ID="GARDEN HARDLINES">GARDEN HARDLINES</value>
+				<value ID="GENERAL HARDWARE">GENERAL HARDWARE</value>
+				<value ID="GREENHOUSE">GREENHOUSE</value>
+				<value ID="GRILLS AND GRILL ACCESSORIES">GRILLS AND GRILL ACCESSORIES</value>
+				<value ID="GYPSUM CEILINGS LADDERS INSULATION">GYPSUM CEILINGS LADDERS INSULATION</value>
+				<value ID="HEATING AIR AND WATER">HEATING AIR AND WATER</value>
+				<value ID="HOME COMFORT">HOME COMFORT</value>
+				<value ID="HOME ENHANCEMENTS/BIRD">HOME ENHANCEMENTS/BIRD</value>
+				<value ID="HOME SECURITY">HOME SECURITY</value>
+				<value ID="INTERIOR DECOR LIGHTING">INTERIOR DECOR LIGHTING</value>
+				<value ID="LADDERS &amp; POLYETHYLENE">LADDERS &amp; POLYETHYLENE</value>
+				<value ID="LAMINATE AND WOOD">LAMINATE AND WOOD</value>
+				<value ID="LAWN CARE">LAWN CARE</value>
+				<value ID="LIGHT BULBS AND UTILITY LIGHTING">LIGHT BULBS AND UTILITY LIGHTING</value>
+				<value ID="LIVE GOODS-C">LIVE GOODS-C</value>
+				<value ID="LIVE GOODS-NE">LIVE GOODS-NE</value>
+				<value ID="LIVE GOODS-SE">LIVE GOODS-SE</value>
+				<value ID="LIVE GOODS-W">LIVE GOODS-W</value>
+				<value ID="MASONRY SIDING">MASONRY SIDING</value>
+				<value ID="MECH HAND SPECIALTY TOOLS AND STORAGE">MECH HAND SPECIALTY TOOLS AND STORAGE</value>
+				<value ID="MOULDINGS AND SPECIALTY MILLWORK">MOULDINGS AND SPECIALTY MILLWORK</value>
+				<value ID="MOWER PARTS AND FALL/SNOW CLEANUP">MOWER PARTS AND FALL/SNOW CLEANUP</value>
+				<value ID="MOWERS/SNOW/ATTACH/PARTS">MOWERS/SNOW/ATTACH/PARTS</value>
+				<value ID="MULCH, SOIL, STONE &amp; SEED">MULCH, SOIL, STONE &amp; SEED</value>
+				<value ID="MULTIMEDIA/WIRING TOOLS&amp;MAT'L">MULTIMEDIA/WIRING TOOLS&amp;MAT'L</value>
+				<value ID="ORGANIZATION SHELVING AND FURNITURE">ORGANIZATION SHELVING AND FURNITURE</value>
+				<value ID="OUTDOOR FASHIONS">OUTDOOR FASHIONS</value>
+				<value ID="OUTDOOR LIGHTING">OUTDOOR LIGHTING</value>
+				<value ID="P WASH TILL GEN HANDHELD OPE">P WASH TILL GEN HANDHELD OPE</value>
+				<value ID="PAINT">PAINT</value>
+				<value ID="PATIO AND POOL">PATIO AND POOL</value>
+				<value ID="PIPE AND FITTINGS">PIPE AND FITTINGS</value>
+				<value ID="PLAY EQUIP &amp; PET CONTAINMENT">PLAY EQUIP &amp; PET CONTAINMENT</value>
+				<value ID="PLUMBING AND BATHING FIXTURES">PLUMBING AND BATHING FIXTURES</value>
+				<value ID="PLUMBING REPAIR &amp; SUPPLIES">PLUMBING REPAIR &amp; SUPPLIES</value>
+				<value ID="PLYWOOD">PLYWOOD</value>
+				<value ID="PLYWOOD &amp; OUTDOOR STORAGE">PLYWOOD &amp; OUTDOOR STORAGE</value>
+				<value ID="PNEU AIR ROTARY AND SHOP EQUIP">PNEU AIR ROTARY AND SHOP EQUIP</value>
+				<value ID="PORTABLE APPLIANCES">PORTABLE APPLIANCES</value>
+				<value ID="POWER TOOLS">POWER TOOLS</value>
+				<value ID="ROOFING VENTILATION GUTTER">ROOFING VENTILATION GUTTER</value>
+				<value ID="RUGS">RUGS</value>
+				<value ID="SEASONAL HEATING AND COOLING">SEASONAL HEATING AND COOLING</value>
+				<value ID="SHELVING/GARAGE/KITCHEN/LAUNDRY">SHELVING/GARAGE/KITCHEN/LAUNDRY</value>
+				<value ID="SOS AND RETAIL ENVIRONMENT">SOS AND RETAIL ENVIRONMENT</value>
+				<value ID="SOS CABINETS AND COUNTERTOPS">SOS CABINETS AND COUNTERTOPS</value>
+				<value ID="SOS COUNTER TOPS">SOS COUNTER TOPS</value>
+				<value ID="SOS MGW COUNTERTOPS">SOS MGW COUNTERTOPS</value>
+				<value ID="SPECIALTY BATH">SPECIALTY BATH</value>
+				<value ID="STOCK CABINETS AND COUNTERTOPS">STOCK CABINETS AND COUNTERTOPS</value>
+				<value ID="STORM PRODUCT,GARAGE DOORS&amp;OPERATOR">STORM PRODUCT,GARAGE DOORS&amp;OPERATOR</value>
+				<value ID="STORM PRODUCTS">STORM PRODUCTS</value>
+				<value ID="STRUCTURAL LUMBER AND PLYWOOD">STRUCTURAL LUMBER AND PLYWOOD</value>
+				<value ID="SUNDRIES AND CAULK">SUNDRIES AND CAULK</value>
+				<value ID="TOOL LAWN AND GAR LUBRICANTS AND SPECIALTY">TOOL LAWN AND GAR LUBRICANTS AND SPECIALTY</value>
+				<value ID="TREATED LUMBER AND DECKING">TREATED LUMBER AND DECKING</value>
+				<value ID="UNASSIGNED">UNASSIGNED</value>
+				<value ID="VANITY TOPS BATH STORAGE AND ACC">VANITY TOPS BATH STORAGE AND ACC</value>
+				<value ID="WINDOW TREATMENTS">WINDOW TREATMENTS</value>
+				<value ID="WINDOWS PATIO DOORS AND GARAGE ENTRY">WINDOWS PATIO DOORS AND GARAGE ENTRY</value>
+				<value ID="WIRING DEVICES CORDS SURGE">WIRING DEVICES CORDS SURGE</value>
+			</valueMap>
+		</field>
+		<field name="strProjectCode" type="text" title="Project Code" >
+			<validators>
+				<validator type="lengthRange" min="0" max="100" errorMessage="Please enter Project Code with max length 100 only"/>
+			</validators>
+		</field>
+		<field name="strPOGName" type="text" title="POG Name" >
+			<validators>
+				<validator type="lengthRange" min="0" max="240" errorMessage="Please enter POG Name with max length 240 only"/>
+			</validators>
+		</field>
+		<field name="dtPOGDate" type="date" title="POG Date" />
+		<field name="strDispMgmtContact" type="text" title="Display Management Contact" >
+			<validators>
+				<validator type="lengthRange" min="0" max="240" errorMessage="Please enter Display Management Contact with max length 240 only"/>
+			</validators>
+		</field>
+		<field name="strFixtureContact" type="text" title="Fixture Contact" >
+			<validators>
+				<validator type="lengthRange" min="0" max="240" errorMessage="Please enter fixture Contact with max length 240 only"/>
+			</validators>
+		</field>
+		<field name="strGraphicsContact" type="text" title="Graphics Contact" >
+			<validators>
+				<validator type="lengthRange" min="0" max="240" errorMessage="Please enter Graphics Contact with max length 240 only"/>
+			</validators>
+		</field>
+		<field name="strPSMContact" type="text" title="PSM Contact" >
+			<validators>
+				<validator type="lengthRange" min="0" max="240" errorMessage="Please enter PSM Contact with max length 240 only"/>
+			</validators>
+		</field>
+		<field name="strFixtureVendorContact" type="text" 	title="Fixture Vendor Contact" >
+			<validators>
+				<validator type="lengthRange" min="0" max="240" errorMessage="Please enter Fixture Vendor Contact with max length 240 only"/>
+			</validators>
+		</field>
+		<field name="strFixtureGraphicsContact" type="text" title="Fixture Graphics Contact" >
+			<validators>
+				<validator type="lengthRange" min="0" max="240" errorMessage="Please enter Fixture Graphics contact with max length 240 only"/>
+			</validators>
+		</field>
+		<field name="dtQuoteDateDue" 		type="date" 	title="Quote Date Due" />
+		<field name="dtInStoreDate" 		type="date" 	title="In Store Date" />
+		<field name="dtArtReleaseDate" 		type="date" 	title="Art Release Date" />
+		<field name="strProjectType" 		type="text" 	title="Project Type" >
+			<valueMap>
+				<value ID="Test">Test</value>
+				<value ID="Rollout">Rollout</value>
+			</valueMap>
+		</field>
+		<field name="strStoreCount" type="text" title="In Store Count">
+			<validators>
+				<validator type="lengthRange" min="0" max="100" errorMessage="Please enter In Store Count with max length 100 only"/>
+			</validators>
+		</field>
+		<field name="strCountry" type="text" title="Country">
+				<valueMap>
+				<value ID="USA">USA</value>
+				<value ID="Canada">Canada</value>
+				<value ID="Mexico">Mexico</value>
+			</valueMap>
+		</field>
+        <field name="strPLRCategory" type="text" title="PLR Category" >
+        	<valueMap>
+				<value ID="Accents">Accents</value>
+				<value ID="Air Filters">Air Filters</value>
+				<value ID="Air Purifiers">Air Purifiers</value>
+				<value ID="Air Tools and Accessories">Air Tools and Accessories</value>
+				<value ID="Aluminum Windows">Aluminum Windows</value>
+				<value ID="Annuals">Annuals</value>
+				<value ID="Appliance Supply Lines">Appliance Supply Lines</value>
+				<value ID="Applicators">Applicators</value>
+				<value ID="Artificial Trees">Artificial Trees</value>
+				<value ID="Automotive">Automotive</value>
+				<value ID="Banners and Flags">Banners and Flags</value>
+				<value ID="Bath Accessories">Bath Accessories</value>
+				<value ID="Bath Décor">Bath Décor</value>
+				<value ID="Bath Fans">Bath Fans</value>
+				<value ID="Bath Faucets">Bath Faucets</value>
+				<value ID="Bath Safety">Bath Safety</value>
+				<value ID="Bath Storage">Bath Storage</value>
+				<value ID="Bathroom And Pedestal Sinks">Bathroom And Pedestal Sinks</value>
+				<value ID="Batteries">Batteries</value>
+				<value ID="Battery Charger and Radio">Battery Charger and Radio</value>
+				<value ID="Battery, Charger &amp; Radio">Battery, Charger &amp; Radio</value>
+				<value ID="Benches and Swings">Benches and Swings</value>
+				<value ID="Benchtop Tools">Benchtop Tools</value>
+				<value ID="Beverages">Beverages</value>
+				<value ID="Bins and Baskets">Bins and Baskets</value>
+				<value ID="Bird Feeders and Seed">Bird Feeders and Seed</value>
+				<value ID="Blinds">Blinds</value>
+				<value ID="Blinds and Shades">Blinds and Shades</value>
+				<value ID="Blowers">Blowers</value>
+				<value ID="Books and Mags">Books and Mags</value>
+				<value ID="Brass Fittings and Tubing">Brass Fittings and Tubing</value>
+				<value ID="Breaker and Boxes">Breaker and Boxes</value>
+				<value ID="Brick and Block">Brick and Block</value>
+				<value ID="Buckets">Buckets</value>
+				<value ID="Bulbs">Bulbs</value>
+				<value ID="Cabinet and Accent Lighting">Cabinet and Accent Lighting</value>
+				<value ID="Cabinet Hardware">Cabinet Hardware</value>
+				<value ID="Carpet Accessories">Carpet Accessories</value>
+				<value ID="Carpet Pad">Carpet Pad</value>
+				<value ID="Caulk + Adhesives">Caulk + Adhesives</value>
+				<value ID="Caulk and Adhesives">Caulk and Adhesives</value>
+				<value ID="Ceiling Fan Access">Ceiling Fan Access</value>
+				<value ID="Ceiling Fans">Ceiling Fans</value>
+				<value ID="Cement and Masonry Tools">Cement and Masonry Tools</value>
+				<value ID="Cement Siding">Cement Siding</value>
+				<value ID="Cements and Solders">Cements and Solders</value>
+				<value ID="Ceramic Tools">Ceramic Tools</value>
+				<value ID="Chain and Rope">Chain and Rope</value>
+				<value ID="Chain Link Fence">Chain Link Fence</value>
+				<value ID="Chainsaws">Chainsaws</value>
+				<value ID="Chandeliers">Chandeliers</value>
+				<value ID="Child Safety">Child Safety</value>
+				<value ID="Childrens Patio">Childrens Patio</value>
+				<value ID="Childrens Play Equipment">Childrens Play Equipment</value>
+				<value ID="Chimney Pipe">Chimney Pipe</value>
+				<value ID="Chippers and Splitters">Chippers and Splitters</value>
+				<value ID="Chippers/Splitters">Chippers/Splitters</value>
+				<value ID="Circular Saw Blades">Circular Saw Blades</value>
+				<value ID="Clamps and Vises">Clamps and Vises</value>
+				<value ID="Cleaning Chemicals">Cleaning Chemicals</value>
+				<value ID="Closet Accessories">Closet Accessories</value>
+				<value ID="Closet Organization">Closet Organization</value>
+				<value ID="Coil Pipe and Inserts">Coil Pipe and Inserts</value>
+				<value ID="Compact Refrigerators">Compact Refrigerators</value>
+				<value ID="Composite Boards">Composite Boards</value>
+				<value ID="Composite Decking">Composite Decking</value>
+				<value ID="Composite Railing">Composite Railing</value>
+				<value ID="Conduit and Fittings">Conduit and Fittings</value>
+				<value ID="Copper Pipe">Copper Pipe</value>
+				<value ID="Corded Drills">Corded Drills</value>
+				<value ID="Cordless Drills and Combo Kits">Cordless Drills and Combo Kits</value>
+				<value ID="Cordless Drills/Combo Kits">Cordless Drills/Combo Kits</value>
+				<value ID="Corrugated Pipe">Corrugated Pipe</value>
+				<value ID="Countertops">Countertops</value>
+				<value ID="CPVC Fittings">CPVC Fittings</value>
+				<value ID="Curtains Rods Rings And Liners">Curtains Rods Rings And Liners</value>
+				<value ID="Decorative Fencing">Decorative Fencing</value>
+				<value ID="Decorative Rugs">Decorative Rugs</value>
+				<value ID="Decorative Shelving">Decorative Shelving</value>
+				<value ID="Dehumidifiers">Dehumidifiers</value>
+				<value ID="Dimension Lumber">Dimension Lumber</value>
+				<value ID="Dimmers">Dimmers</value>
+				<value ID="Dimmers and Timers">Dimmers and Timers</value>
+				<value ID="Dishwashers">Dishwashers</value>
+				<value ID="Disposers">Disposers</value>
+				<value ID="DIY &amp; Stationary Compressors">DIY &amp; Stationary Compressors</value>
+				<value ID="DIY and Stationary Compressors">DIY and Stationary Compressors</value>
+				<value ID="Door and Window Hardware">Door and Window Hardware</value>
+				<value ID="Door Bells">Door Bells</value>
+				<value ID="Doormats">Doormats</value>
+				<value ID="Drain Cleaing Tools">Drain Cleaing Tools</value>
+				<value ID="Drain Cleaning Tools">Drain Cleaning Tools</value>
+				<value ID="Drains and Flanges">Drains and Flanges</value>
+				<value ID="Drapery Hardware">Drapery Hardware</value>
+				<value ID="DRIP">DRIP</value>
+				<value ID="Dryer Vent / Flex Duct/Metal Duct">Dryer Vent / Flex Duct/Metal Duct</value>
+				<value ID="Dryer Vent and Flex Duct">Dryer Vent and Flex Duct</value>
+				<value ID="Drywall Tools">Drywall Tools</value>
+				<value ID="Earthquake Prep">Earthquake Prep</value>
+				<value ID="Edge Glued Panels">Edge Glued Panels</value>
+				<value ID="Electrical Accessories">Electrical Accessories</value>
+				<value ID="Electrical Boxes">Electrical Boxes</value>
+				<value ID="Electrical Testers">Electrical Testers</value>
+				<value ID="Electrical tools">Electrical tools</value>
+				<value ID="Entry Doors">Entry Doors</value>
+				<value ID="Extension Cords">Extension Cords</value>
+				<value ID="Exterior Paint">Exterior Paint</value>
+				<value ID="Exterior Post Lights">Exterior Post Lights</value>
+				<value ID="Exterior Shutters">Exterior Shutters</value>
+				<value ID="Exterior Stains">Exterior Stains</value>
+				<value ID="Fabric Care">Fabric Care</value>
+				<value ID="Farm and Garden">Farm and Garden</value>
+				<value ID="Farm Supplies">Farm Supplies</value>
+				<value ID="Fasteners">Fasteners</value>
+				<value ID="Faucet Repair">Faucet Repair</value>
+				<value ID="Fertilizer">Fertilizer</value>
+				<value ID="Finished Panels">Finished Panels</value>
+				<value ID="Fire logs and starters">Fire logs and starters</value>
+				<value ID="Fireplace Maintenance">Fireplace Maintenance</value>
+				<value ID="Flashlights">Flashlights</value>
+				<value ID="Flat Roof">Flat Roof</value>
+				<value ID="Flexible Fittings">Flexible Fittings</value>
+				<value ID="Flood Pumps">Flood Pumps</value>
+				<value ID="Floor Care">Floor Care</value>
+				<value ID="Floor Care and Rentals">Floor Care and Rentals</value>
+				<value ID="Floor Coatings">Floor Coatings</value>
+				<value ID="Floor Tile">Floor Tile</value>
+				<value ID="Floorcare Rental">Floorcare Rental</value>
+				<value ID="Flooring Saws">Flooring Saws</value>
+				<value ID="Fluorescent Bulbs">Fluorescent Bulbs</value>
+				<value ID="Fluorescent Lighting">Fluorescent Lighting</value>
+				<value ID="Flushmounts">Flushmounts</value>
+				<value ID="Framing Hardware">Framing Hardware</value>
+				<value ID="Freestanding Ranges">Freestanding Ranges</value>
+				<value ID="Freezers">Freezers</value>
+				<value ID="Furniture">Furniture</value>
+				<value ID="Furring Strips">Furring Strips</value>
+				<value ID="Galvanized Pipe and Black Iron">Galvanized Pipe and Black Iron</value>
+				<value ID="Garage Door Operator and Door Parts">Garage Door Operator and Door Parts</value>
+				<value ID="Garage Doors">Garage Doors</value>
+				<value ID="Garage Heat">Garage Heat</value>
+				<value ID="Garage Organization">Garage Organization</value>
+				<value ID="Garden Seed">Garden Seed</value>
+				<value ID="Gate and connection hardware">Gate and connection hardware</value>
+				<value ID="Gazebos">Gazebos</value>
+				<value ID="Generators">Generators</value>
+				<value ID="Gift Cards">Gift Cards</value>
+				<value ID="Glass Block">Glass Block</value>
+				<value ID="Gloves and Apparel">Gloves and Apparel</value>
+				<value ID="Glue">Glue</value>
+				<value ID="Grass and Weed Chemicals">Grass and Weed Chemicals</value>
+				<value ID="Grass Seed">Grass Seed</value>
+				<value ID="Grill Accessories">Grill Accessories</value>
+				<value ID="Grills">Grills</value>
+				<value ID="Grout Mortar and Sealers">Grout Mortar and Sealers</value>
+				<value ID="Grout, Mortar, Sealers">Grout, Mortar, Sealers</value>
+				<value ID="Gutter">Gutter</value>
+				<value ID="Gypsum Accessories">Gypsum Accessories</value>
+				<value ID="Halloween">Halloween</value>
+				<value ID="Hammer and Prybars">Hammer and Prybars</value>
+				<value ID="Hammocks">Hammocks</value>
+				<value ID="Hand Saws">Hand Saws</value>
+				<value ID="Handheld Cutting and Grinding">Handheld Cutting and Grinding</value>
+				<value ID="Handheld Cutting/Grinding">Handheld Cutting/Grinding</value>
+				<value ID="Hardibacker">Hardibacker</value>
+				<value ID="Hardware Lubes">Hardware Lubes</value>
+				<value ID="Hardwood Flooring">Hardwood Flooring</value>
+				<value ID="Heating Fuel">Heating Fuel</value>
+				<value ID="Hole Making">Hole Making</value>
+				<value ID="Holiday Live Goods">Holiday Live Goods</value>
+				<value ID="Home Accents">Home Accents</value>
+				<value ID="Home Automation and Multimedia">Home Automation and Multimedia</value>
+				<value ID="House and Patio Plants">House and Patio Plants</value>
+				<value ID="Humidifers">Humidifers</value>
+				<value ID="Humidifiers">Humidifiers</value>
+				<value ID="Hurricane Products">Hurricane Products</value>
+				<value ID="Ice Melt">Ice Melt</value>
+				<value ID="Indoor Chemicals">Indoor Chemicals</value>
+				<value ID="Indoor Planters">Indoor Planters</value>
+				<value ID="Indoor Seasonal Heating">Indoor Seasonal Heating</value>
+				<value ID="Indoor Trash Cans">Indoor Trash Cans</value>
+				<value ID="Insulation">Insulation</value>
+				<value ID="Interior Anchoring Hardware">Interior Anchoring Hardware</value>
+				<value ID="Interior Doors">Interior Doors</value>
+				<value ID="Interior Paint">Interior Paint</value>
+				<value ID="Interior Stains">Interior Stains</value>
+				<value ID="Interior Wall Panels">Interior Wall Panels</value>
+				<value ID="Juvenile Soft Window">Juvenile Soft Window</value>
+				<value ID="Juvenile Tools">Juvenile Tools</value>
+				<value ID="Keys and Accessories">Keys and Accessories</value>
+				<value ID="Kitchen Cabinets">Kitchen Cabinets</value>
+				<value ID="Kitchen Faucets">Kitchen Faucets</value>
+				<value ID="Kitchen Organization">Kitchen Organization</value>
+				<value ID="Kitchen Sinks">Kitchen Sinks</value>
+				<value ID="Ladder Racks">Ladder Racks</value>
+				<value ID="Ladders">Ladders</value>
+				<value ID="Ladders folding stairs stepstools">Ladders folding stairs stepstools</value>
+				<value ID="Lamps">Lamps</value>
+				<value ID="Landscape Fabric">Landscape Fabric</value>
+				<value ID="Landscape Lighting">Landscape Lighting</value>
+				<value ID="Landscape Timbers">Landscape Timbers</value>
+				<value ID="Lattice">Lattice</value>
+				<value ID="Laundry Accessories">Laundry Accessories</value>
+				<value ID="Laundry Cleaners">Laundry Cleaners</value>
+				<value ID="Laundry Tubs">Laundry Tubs</value>
+				<value ID="Lavatories">Lavatories</value>
+				<value ID="Lawn and Garden Tools">Lawn and Garden Tools</value>
+				<value ID="Lawn Edging">Lawn Edging</value>
+				<value ID="Levels and Squares">Levels and Squares</value>
+				<value ID="Light Bulbs">Light Bulbs</value>
+				<value ID="Live Christmas Trees and Wreaths">Live Christmas Trees and Wreaths</value>
+				<value ID="Locksets">Locksets</value>
+				<value ID="Mailboxes and Posts">Mailboxes and Posts</value>
+				<value ID="Marking Tools">Marking Tools</value>
+				<value ID="Masonry Accessories">Masonry Accessories</value>
+				<value ID="Masonry Anchoring">Masonry Anchoring</value>
+				<value ID="Masonry Bagged Goods">Masonry Bagged Goods</value>
+				<value ID="Masonry Metals">Masonry Metals</value>
+				<value ID="Mechanics Tools">Mechanics Tools</value>
+				<value ID="Medicine Cabinets">Medicine Cabinets</value>
+				<value ID="Metal Duct">Metal Duct</value>
+				<value ID="Metal Studs and Gypsum">Metal Studs and Gypsum</value>
+				<value ID="Microwaves">Microwaves</value>
+				<value ID="Mini Pendants">Mini Pendants</value>
+				<value ID="Miter Saws">Miter Saws</value>
+				<value ID="Mobile Home Skirting">Mobile Home Skirting</value>
+				<value ID="Mops and Brooms">Mops and Brooms</value>
+				<value ID="Moulding">Moulding</value>
+				<value ID="Moving and Storage">Moving and Storage</value>
+				<value ID="Mower Accessories">Mower Accessories</value>
+				<value ID="Mulch and Stone">Mulch and Stone</value>
+				<value ID="Multi Purpose Cabinets">Multi Purpose Cabinets</value>
+				<value ID="Multipurpose">Multipurpose</value>
+				<value ID="Nails and Screws">Nails and Screws</value>
+				<value ID="Nails/Screws/Fasteners">Nails/Screws/Fasteners</value>
+				<value ID="Non Commodity Moulding">Non Commodity Moulding</value>
+				<value ID="OPE Accessories">OPE Accessories</value>
+				<value ID="OTR Microwaves">OTR Microwaves</value>
+				<value ID="Outdoor Accessories">Outdoor Accessories</value>
+				<value ID="Outdoor Boards">Outdoor Boards</value>
+				<value ID="Outdoor Chemicals">Outdoor Chemicals</value>
+				<value ID="Outdoor Drain (NDS)">Outdoor Drain (NDS)</value>
+				<value ID="Outdoor Drain NDS">Outdoor Drain NDS</value>
+				<value ID="Outdoor Heating">Outdoor Heating</value>
+				<value ID="Outdoor Lighting">Outdoor Lighting</value>
+				<value ID="Outdoor Planters">Outdoor Planters</value>
+				<value ID="Outdoor Seasonal Heat">Outdoor Seasonal Heat</value>
+				<value ID="Outdoor Style Accessories">Outdoor Style Accessories</value>
+				<value ID="Outdoor Trash Cans">Outdoor Trash Cans</value>
+				<value ID="Padlocks">Padlocks</value>
+				<value ID="Paint Sprayers">Paint Sprayers</value>
+				<value ID="Paint Sundries">Paint Sundries</value>
+				<value ID="Paint Tools">Paint Tools</value>
+				<value ID="Patio">Patio</value>
+				<value ID="Patio Accessories">Patio Accessories</value>
+				<value ID="Patio Doors">Patio Doors</value>
+				<value ID="Patio Hardscape">Patio Hardscape</value>
+				<value ID="Patio Rugs">Patio Rugs</value>
+				<value ID="Patio Screen and Enclosures">Patio Screen and Enclosures</value>
+				<value ID="Pattern Stock">Pattern Stock</value>
+				<value ID="Pendants">Pendants</value>
+				<value ID="Perennials">Perennials</value>
+				<value ID="Pesticide">Pesticide</value>
+				<value ID="Pet Supplies">Pet Supplies</value>
+				<value ID="PEX Fittings">PEX Fittings</value>
+				<value ID="Pipe">Pipe</value>
+				<value ID="Pipe Support and Clamps">Pipe Support and Clamps</value>
+				<value ID="Pipe Wrap and Winterization">Pipe Wrap and Winterization</value>
+				<value ID="Plant Accessories">Plant Accessories</value>
+				<value ID="Plant Food">Plant Food</value>
+				<value ID="Planters">Planters</value>
+				<value ID="Plastic Storage">Plastic Storage</value>
+				<value ID="Pliers and Wrenches">Pliers and Wrenches</value>
+				<value ID="Plumbing Tools">Plumbing Tools</value>
+				<value ID="Plywood">Plywood</value>
+				<value ID="Pneumatics">Pneumatics</value>
+				<value ID="Polyethylene">Polyethylene</value>
+				<value ID="Ponds and Water Gardening">Ponds and Water Gardening</value>
+				<value ID="Pool Products">Pool Products</value>
+				<value ID="Portable Grills And Smokers">Portable Grills And Smokers</value>
+				<value ID="Portable Seasonal Heating">Portable Seasonal Heating</value>
+				<value ID="Power Ventilation">Power Ventilation</value>
+				<value ID="Precut Plywood">Precut Plywood</value>
+				<value ID="Pressure Washers">Pressure Washers</value>
+				<value ID="Primers">Primers</value>
+				<value ID="Project Boards">Project Boards</value>
+				<value ID="PTA Drilling">PTA Drilling</value>
+				<value ID="Push Fittings">Push Fittings</value>
+				<value ID="PVC and ABS DWV">PVC and ABS DWV</value>
+				<value ID="Range Accessories">Range Accessories</value>
+				<value ID="Range Hoods">Range Hoods</value>
+				<value ID="Ranges">Ranges</value>
+				<value ID="Recessed Lighting">Recessed Lighting</value>
+				<value ID="Refrigerators">Refrigerators</value>
+				<value ID="Registers and Grills">Registers and Grills</value>
+				<value ID="Remnants">Remnants</value>
+				<value ID="Renewable Energy">Renewable Energy</value>
+				<value ID="Replacement Cushions">Replacement Cushions</value>
+				<value ID="Riding Mowers">Riding Mowers</value>
+				<value ID="Roll Roofing and Felt">Roll Roofing and Felt</value>
+				<value ID="Roof Coatings and Driveway Sealers">Roof Coatings and Driveway Sealers</value>
+				<value ID="Roof Coatings/Driveway Sealers">Roof Coatings/Driveway Sealers</value>
+				<value ID="Roof Panels">Roof Panels</value>
+				<value ID="Rotary Tools and Accessories">Rotary Tools and Accessories</value>
+				<value ID="ROUTER BITS AND ACCESSORIES">ROUTER BITS AND ACCESSORIES</value>
+				<value ID="Rug Pad">Rug Pad</value>
+				<value ID="Safes">Safes</value>
+				<value ID="Safety Equipment">Safety Equipment</value>
+				<value ID="Sanders">Sanders</value>
+				<value ID="Sanding">Sanding</value>
+				<value ID="Sandpaper">Sandpaper</value>
+				<value ID="Scatter Rugs">Scatter Rugs</value>
+				<value ID="Schedule 40">Schedule 40</value>
+				<value ID="Schedule 80">Schedule 80</value>
+				<value ID="Screen and Glass">Screen and Glass</value>
+				<value ID="Screwdrivers">Screwdrivers</value>
+				<value ID="Seasonal Cooling">Seasonal Cooling</value>
+				<value ID="Security and Utility Lighting">Security and Utility Lighting</value>
+				<value ID="Sewer and Drain Fittings">Sewer and Drain Fittings</value>
+				<value ID="Shades">Shades</value>
+				<value ID="Sheet Insulation and Accessories">Sheet Insulation and Accessories</value>
+				<value ID="Shelving">Shelving</value>
+				<value ID="Shingles">Shingles</value>
+				<value ID="Showering Products">Showering Products</value>
+				<value ID="Shrubs">Shrubs</value>
+				<value ID="Shutters">Shutters</value>
+				<value ID="Shutters And Awnings">Shutters And Awnings</value>
+				<value ID="Siding Wood Composite and Cement">Siding Wood Composite and Cement</value>
+				<value ID="Siding, Wood and Composite">Siding, Wood and Composite</value>
+				<value ID="Signs Letters and Numbers">Signs Letters and Numbers</value>
+				<value ID="Signs, Letters, Numbers">Signs, Letters, Numbers</value>
+				<value ID="Silt Fence">Silt Fence</value>
+				<value ID="Single Serve">Single Serve</value>
+				<value ID="Sink Strainers and Tub Drains">Sink Strainers and Tub Drains</value>
+				<value ID="Skylights">Skylights</value>
+				<value ID="Small Appliances">Small Appliances</value>
+				<value ID="SMALL PARTS ORGANIZERS">SMALL PARTS ORGANIZERS</value>
+				<value ID="Smoke">Smoke</value>
+				<value ID="Snacks">Snacks</value>
+				<value ID="Snowthrowers">Snowthrowers</value>
+				<value ID="Soft Window">Soft Window</value>
+				<value ID="Soft Window - Need to break into Kitchen, Bath and Living">Soft Window - Need to break into Kitchen, Bath and Living</value>
+				<value ID="Soil">Soil</value>
+				<value ID="SOS Faucets">SOS Faucets</value>
+				<value ID="Speciality Hand Tools">Speciality Hand Tools</value>
+				<value ID="Specialty Blades and Accessories">Specialty Blades and Accessories</value>
+				<value ID="Specialty Coatings">Specialty Coatings</value>
+				<value ID="specialty Hand Tools">specialty Hand Tools</value>
+				<value ID="Specialty Metals">Specialty Metals</value>
+				<value ID="Specialty Millwork">Specialty Millwork</value>
+				<value ID="Specialty Windows">Specialty Windows</value>
+				<value ID="Spray Paint">Spray Paint</value>
+				<value ID="Sprayers">Sprayers</value>
+				<value ID="Stair Parts">Stair Parts</value>
+				<value ID="Stairs - Folding">Stairs - Folding</value>
+				<value ID="STAPLERS &amp; RIVETERS &amp; HOT MELT GLUE">STAPLERS &amp; RIVETERS &amp; HOT MELT GLUE</value>
+				<value ID="Staplers Riveters and Hot Melt Glue">Staplers Riveters and Hot Melt Glue</value>
+				<value ID="Static Ventilation">Static Ventilation</value>
+				<value ID="Stepstools">Stepstools</value>
+				<value ID="Stock Carpet and Sheet Vinyl">Stock Carpet and Sheet Vinyl</value>
+				<value ID="Stock Laminate">Stock Laminate</value>
+				<value ID="Stone Veneer">Stone Veneer</value>
+				<value ID="Storage Buildings">Storage Buildings</value>
+				<value ID="Storm Screen and Security Doors">Storm Screen and Security Doors</value>
+				<value ID="Storm, Screen, and Security Doors">Storm, Screen, and Security Doors</value>
+				<value ID="Stoves and Stove Maintenance">Stoves and Stove Maintenance</value>
+				<value ID="Straw">Straw</value>
+				<value ID="Studs">Studs</value>
+				<value ID="Supply Lines and Valves">Supply Lines and Valves</value>
+				<value ID="Suspended Ceilings">Suspended Ceilings</value>
+				<value ID="Synthetic Turf">Synthetic Turf</value>
+				<value ID="Tanks and Water Supply Pumps">Tanks and Water Supply Pumps</value>
+				<value ID="Tape">Tape</value>
+				<value ID="Tape Measures">Tape Measures</value>
+				<value ID="Thermostats">Thermostats</value>
+				<value ID="Thinners and Solvents">Thinners and Solvents</value>
+				<value ID="THREADED ROD &amp; METAL SHAPES">THREADED ROD &amp; METAL SHAPES</value>
+				<value ID="Threaded Rod and Metal Shapes">Threaded Rod and Metal Shapes</value>
+				<value ID="Tie Downs and Bungees">Tie Downs and Bungees</value>
+				<value ID="Tillers">Tillers</value>
+				<value ID="Timers">Timers</value>
+				<value ID="Tips and Casters">Tips and Casters</value>
+				<value ID="Toilet Repair">Toilet Repair</value>
+				<value ID="Toilet Seats">Toilet Seats</value>
+				<value ID="Toilets">Toilets</value>
+				<value ID="Tool Belts and Knee Pads">Tool Belts and Knee Pads</value>
+				<value ID="Tool Boxes">Tool Boxes</value>
+				<value ID="Tools Torch Kits and Access">Tools Torch Kits and Access</value>
+				<value ID="Track Lighting">Track Lighting</value>
+				<value ID="Traffic Safety">Traffic Safety</value>
+				<value ID="Trash Bags">Trash Bags</value>
+				<value ID="Treated Decking">Treated Decking</value>
+				<value ID="Treated Lumber">Treated Lumber</value>
+				<value ID="Trees">Trees</value>
+				<value ID="Trellis and Edging">Trellis and Edging</value>
+				<value ID="Trim a Tree Accessories">Trim a Tree Accessories</value>
+				<value ID="Trim a Tree Lights">Trim a Tree Lights</value>
+				<value ID="Trimmers Edgers and Augers">Trimmers Edgers and Augers</value>
+				<value ID="Trimmers, Edgers, Augers">Trimmers, Edgers, Augers</value>
+				<value ID="Trucks Trailers and Accessories">Trucks Trailers and Accessories</value>
+				<value ID="Trucks, Trailers and Accessories">Trucks, Trailers and Accessories</value>
+				<value ID="Tubs and Showers">Tubs and Showers</value>
+				<value ID="Tubular Drainage">Tubular Drainage</value>
+				<value ID="Umbrellas">Umbrellas</value>
+				<value ID="Underground">Underground</value>
+				<value ID="Utility Knives">Utility Knives</value>
+				<value ID="Utility Rugs">Utility Rugs</value>
+				<value ID="Valves">Valves</value>
+				<value ID="Vanities">Vanities</value>
+				<value ID="Vanity Lighting">Vanity Lighting</value>
+				<value ID="Vanity Tops">Vanity Tops</value>
+				<value ID="Ventilation">Ventilation</value>
+				<value ID="Vinyl Fence">Vinyl Fence</value>
+				<value ID="Vinyl Siding">Vinyl Siding</value>
+				<value ID="Vinyl Tile and Accessories">Vinyl Tile and Accessories</value>
+				<value ID="Vinyl Windows">Vinyl Windows</value>
+				<value ID="Walk Behind Mowers">Walk Behind Mowers</value>
+				<value ID="Wall Coverings">Wall Coverings</value>
+				<value ID="Wall Ovens">Wall Ovens</value>
+				<value ID="Wall Plates">Wall Plates</value>
+				<value ID="Wall Repair">Wall Repair</value>
+				<value ID="Wall Repair + Sanding">Wall Repair + Sanding</value>
+				<value ID="Wall Sconces">Wall Sconces</value>
+				<value ID="Wall Tile">Wall Tile</value>
+				<value ID="Water Coolers  / Bottled Water">Water Coolers  / Bottled Water</value>
+				<value ID="Water Coolers and Bottled Water">Water Coolers and Bottled Water</value>
+				<value ID="Water Heater Accessories">Water Heater Accessories</value>
+				<value ID="Water Heaters">Water Heaters</value>
+				<value ID="Water Heaters and Accessories">Water Heaters and Accessories</value>
+				<value ID="Water Treatment">Water Treatment</value>
+				<value ID="Watering">Watering</value>
+				<value ID="Weatherstrip">Weatherstrip</value>
+				<value ID="Weatherstrip Hard Goods">Weatherstrip Hard Goods</value>
+				<value ID="Weatherstrip Soft Goods">Weatherstrip Soft Goods</value>
+				<value ID="Welding">Welding</value>
+				<value ID="Wet Dry Vac">Wet Dry Vac</value>
+				<value ID="Whitewood Boards">Whitewood Boards</value>
+				<value ID="Whole House Humidification">Whole House Humidification</value>
+				<value ID="Window Film">Window Film</value>
+				<value ID="Wine Coolers">Wine Coolers</value>
+				<value ID="Wine Coolers and Compact Refrigerators">Wine Coolers and Compact Refrigerators</value>
+				<value ID="Winter Plant Protection">Winter Plant Protection</value>
+				<value ID="Winter Products">Winter Products</value>
+				<value ID="Wire">Wire</value>
+				<value ID="Wire Fence">Wire Fence</value>
+				<value ID="Wiring Devices">Wiring Devices</value>
+				<value ID="Wood Fence">Wood Fence</value>
+				<value ID="Wood Windows">Wood Windows</value>
+				<value ID="Woodworking">Woodworking</value>
+				<value ID="Woodworking Tools">Woodworking Tools</value>
+				<value ID="Work Supports">Work Supports</value>
+				<value ID="Work Wear">Work Wear</value>
+				<value ID="Worklights">Worklights</value>
+				<value ID="Year Round Heating">Year Round Heating</value>
+        	</valueMap>
+        </field>
+		<field name="strNotes" type="text" title="Notes">
+			<validators>
+				<validator type="lengthRange" min="0" max="2000" errorMessage="Please enter Notes with max length 2000 only"/>
+			</validators>		
+		</field>
+		<field name="strSource" type="text" title="Source">
+			<validators>
+				<validator type="lengthRange" min="0" max="1" errorMessage="Please enter Source with max length 1 only"/>
+			</validators>		
+			<valueMap>
+				<value ID="P">PMT</value>
+				<value ID="A">Archway</value>
+			</valueMap>
+		</field>
+		<field name="strCreatedBy" type="text" title="Created By" >
+			<validators>
+				<validator type="lengthRange" min="0" max="30" errorMessage="Please enter Created By with max length 30 only"/>
+			</validators>
+		
+		</field> 
+        <field name="dtCreationDate"        type="date"    	title="Creation Date" /> 
+        <field name="strLastUpdateBy"       type="text"    	title="Last Update By" >
+        	<validators>
+				<validator type="lengthRange" min="0" max="30" errorMessage="Please enter Last Updated By with max length 30 only"/>
+			</validators>		
+        </field>
+        <field name="dtLastUpdateDate"      type="date"    	title="Last Update Date" />
+	</fields>
+	
+	<operationBindings >
+		<operationBinding operationType="fetch" archServerMethod="fetchProject" />
+	    <operationBinding operationType="remove" archServerMethod="deleteProject" />
+	    <operationBinding operationType="add" archServerMethod="saveProject" />
+	    <operationBinding operationType="update" archServerMethod="updateProject" />
+	</operationBindings>
+</DataSource>

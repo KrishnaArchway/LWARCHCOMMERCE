@@ -1,0 +1,1 @@
+<DataSource serverType="component" ID="FWLoginWidget" inheritsFrom="HLayout" instanceConstructor="com.archway.smartgwt.client.widget.framework.FWLoginWidget"/>

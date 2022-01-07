@@ -1,0 +1,1 @@
+<DataSource serverType="component" ID="ESOrderSearchWidget" inheritsFrom="SectionStack" instanceConstructor="com.archway.smartgwt.client.widget.framework.ESOrderSearchWidget"/>

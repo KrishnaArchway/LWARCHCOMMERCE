@@ -1,0 +1,24 @@
+<DataSource
+	ID="LWInstoreBackOrder" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWInstoreBackOrderDMI" >
+	
+	<fields>
+		<field name="strActionMenu"         	type="text"   />
+		<field name="strProjectCode"	width="75"     	type="text"  primaryKey="true"  title="Reset #" />		
+		<field name="strReorderNumber"	width="120"		type="text"  title="Reorder #" />
+		<field name="strItemDesc" 				type="text"  title="Description" />
+		<field name="strItemTransit" 			type="text"  title="Status" />
+		<field name="lngQty"	width="90"			type="text"  title="Qty" />
+		<field name="lngQtyShipped"	width="90"	type="text" title="Qty Shipped" 	 />
+		<field name="strTrackingNumbers"	width="130"	type="text"  title="Tracking Number(s)"		/>
+		<field name="strCarrierTrackingURL" 	width="130" type="LINK" title="Tracking Number(s)"		/>
+		<field name="strCollateralShipSource" 	type="text"  title="CollateralShipSource"	/>
+		<field name="strBORODepFlag" 			type="text"  title="BORO Dep Flag"	/>
+		<field name="dtStoreExecuteByDate"	width="140"	type="text"  title="Store Execute By Date"/>		
+	</fields>
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchBackOrder" />
+		<operationBinding operationType="custom" operationID="setFlag" archServerMethod="setCompletedFlag" />	
+	</operationBindings>	
+</DataSource>

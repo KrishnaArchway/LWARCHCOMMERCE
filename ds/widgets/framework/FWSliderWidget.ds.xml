@@ -1,0 +1,1 @@
+<DataSource serverType="component" ID="FWSliderWidget" inheritsFrom="HTMLPane" instanceConstructor="com.archway.smartgwt.client.widget.framework.FWSliderWidget"/>

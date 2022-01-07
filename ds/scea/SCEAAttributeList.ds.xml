@@ -1,0 +1,15 @@
+<DataSource
+	ID="SCEAAttributeList" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEAAttributeDMI">	
+	<fields>
+			<field name="strAttribute" type="text" title="Attribute Name" primaryKey="true"/>
+			<field name="strAttributeValue" type="text" title="Value"/>		
+				
+	</fields>	
+	
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchAttributesList"/>		
+	</operationBindings>
+</DataSource>

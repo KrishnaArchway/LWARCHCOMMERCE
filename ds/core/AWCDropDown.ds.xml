@@ -1,0 +1,27 @@
+<DataSource
+    ID="AWCDropDown"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.core.dmi.AWCDropDownDMI"
+    >
+  
+    <fields>
+    	<field name="strColumn1" type="text" hidden="true"/>
+    	<field name="strColumn2" type="text"/>
+    	<field name="strColumn3" type="text"/>
+    	<field name="strColumn4" type="text"/>
+    	<field name="strColumn5" type="text"/>
+    	<field name="strColumn6" type="text"/>
+    	<field name="strColumn7" type="text"/>
+    	<field name="strColumn8" type="text"/>
+    	<field name="strColumn9" type="text"/>
+    	<field name="strColumn10" type="text"/>
+    	<field name="strColumn11" type="text"/>
+    	<field name="strColumn12" type="text"/>
+    </fields>
+    
+    <operationBindings>
+		<operationBinding operationType="fetch"  operationId="fetchDropdownData" archServerMethod="fetchDropDown" />
+		<operationBinding operationType="fetch"  archServerMethod="fetchDropDown" />
+    </operationBindings>
+    
+</DataSource>

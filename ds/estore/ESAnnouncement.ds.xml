@@ -1,0 +1,27 @@
+<DataSource
+	ID="ESAnnouncement" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.estore.dmi.ESAnnouncementDMI">
+	
+	<fields>
+		<field name="strMessageId"      title="Message Id" primaryKey="true"/>
+		<field name="intClientId"   title="Client" />
+		<field name="strMessageDesc" title="Messages Description"   />
+		<field name="strMessageType" title="Message type"   />
+		<field name="lngCategoryId"  title="Category"/>
+		<field name="strMessageAccessType"  title="Access Type"/>
+		<field name="strMessageAccessValue"     title="Access Value"     />
+		<field name="strSubject"     title="Subject"     />
+		<field name="dtStartDate"    title="Start Date"        />
+		<field name="dtEndDate"    title="End Date"        />
+		<field name="strCreatedBy"        /> 
+        <field name="dtCreationDate"      /> 
+        <field name="strLastUpdateBy"     /> 
+        <field name="dtLastUpdateDate"    />        
+	</fields>
+	
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchAnnouncement" />
+	 
+	</operationBindings>
+</DataSource>

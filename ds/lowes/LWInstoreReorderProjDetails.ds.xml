@@ -1,0 +1,55 @@
+<DataSource
+	ID="LWInstoreReorderProjDetails" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWInstoreReorderDMI">
+	<!-- DataSource ID="LWInstoreReorderProjDetails" dataURL="/ds/test_data/reorder.data.xml" recordXPath="/List/reorder" clientOnly="true" -->
+	<fields>		
+		<field name="strActionMenu"         	type="text"    	/>
+		<field name="intClientId"          		type="long" 	/>
+		<field name="strStoreNumber"         	type="text"     />
+		<field name="intProjectNumber" 			type="long" 	/>
+		<field name="strProjectCode" 			type="text" 	/>
+		<field name="strPONumber"         		type="text"     />
+		<field name="strReorderNumber"          type="text" width="150"	primaryKey="true" title="Reorder #"/>
+		<field name="strItemDesc"      			type="text" width="250" title="Description"/>
+		<field name="strItemTransit" 			type="text" 	/>
+		<field name="lngQty" 	     type="long"  title="Qty" align="left" width="250" />
+		<field name="lngShownQty"    type="long"  title="Qty" align="left" width="100" required="true"  >
+			 <validators>
+					<validator type="integerRange" min="1" />
+			</validators>
+	
+		</field>
+		<field name="uiQtySHPD"    type="long"  title="Qty Shipped" align="left" width="250" />
+		<field name="uiQtyPending"    type="long"  title="Reorder Qty Pending" align="left" width="250" />
+		<field name="uiQtyAvailForReorder"    type="long"  title="Qty Available for Reorder" align="left" width="250" />
+		<field name="strReason"       type="text"  title="Reason For Reorder" width="250" >
+			<valueMap>
+				 <value ID="No Reorder Required">No Reorder Required</value>
+				<value ID="Damage at Store">Damage at Store</value>
+				<value ID="Damage in Transit">Damage in Transit</value>
+				<value ID="Damage (Concealed)">Damage (Concealed)</value>
+				<value ID="Missing Item">Missing Item</value>
+				<value ID="Missing Quantity">Missing Quantity</value>
+				<value ID="Unable to Locate">Unable to Locate</value>
+			</valueMap>			
+		</field>
+		<field name="strComments" 				type="text"  width="250" title="Comments"   length="250"/>
+		<field name="lngQtyShipped"         	type="long" align="left" /> 
+		<field name="strCarrier"          		type="text" 	/>
+		<field name="strTrackingNumbers"        type="text"     />
+		<field name="strCarrierTrackingURL" 	type="LINK" title="Tracking Number(s)"		/>
+		<field name="StrContainer" 				type="text" 	/>
+		<field name="strCollateralShipSource" 	type="text"  title="Ship From"	/>
+		<field name="strExecStatus" 			type="text" 	title="Status" />
+		<field name="strImgFileName" 			type="text" 	/>
+		<field name="strInstructionsFileName"   type="text"     />
+		<field name="strExported"   type="text"  default= "N"   />
+		
+	</fields>
+		<operationBindings>
+			<operationBinding operationType="fetch"   archServerMethod="fetchReorder"/>
+			<operationBinding operationType="update"  archServerMethod="saveReorders"/>
+		</operationBindings>
+</DataSource>
+		

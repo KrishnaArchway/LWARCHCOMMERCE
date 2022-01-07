@@ -1,0 +1,32 @@
+<DataSource ID="LWInstoreStoreMaster" 
+		serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+		archServerObject="com.archway.lowes.dmi.LWInstoreStoreMasterDMI">
+	<fields>
+		<field name="intClientId" title="ClientId" width="50" type="number" hidden="true" />		
+		<field name="lngRegion" title="Region" width="100" type="text" hidden="true" />
+		<field name="lngMarket" title="Market / District" width="120" type="text" hidden="true"/>
+		<field name="strRegion" title="Region" width="100" type="text"  cellAlign="center" />
+		<field name="strMarket" title="Market / District" width="120" type="text"  cellAlign="center" />
+		<field name="strStoreNumber" title="Store Number" width="150" type="text"  cellAlign="center" />
+		<field name="strStoreName" title="Store Name" width="*" type="text" />
+		<field name="strAddress" title="Address" width="200" type="text" hidden="true"/>
+		<field name="strCity" title="City" width="85" type="text" hidden="true"/>
+		<field name="strState" title="State" width="85" type="text" hidden="true"/>
+		<field name="strZip" title="Zip" width="60" type="text" hidden="true"/>
+		<field name="strCounty" title="Country" width="80" type="int" hidden="true"/>
+		<field name="dtOpenDate" title="Open Date" width="85" type="datetime" hidden="true"/>
+		<field name="dtCloseDate" title="Close Date" width="85" type="datetime" hidden="true"/>
+		<field name="strRetailFlag" title="Retail Flag" width="85" type="int" hidden="true"/>
+		<field name="lngRDC" title="RDC" width="85" type="int" hidden="true"/>
+		<field name="strOpenFlag" title="Open Flag" width="85" type="int" hidden="true"/>	
+		<field name="strCreatedBy" type="text" title="Created By" hidden="true"/>       
+        <field name="dtCreationDate" type="datetime" title="Creation Date" useTextField="true" hidden="true"/>        
+        <field name="strLastUpdatedBy" type="text" title="Last Updated By" hidden="true"/>        
+        <field name="dtLastUpdateDate" type="datetime" title="Last Updated Date" useTextField="true" hidden="true"/>
+	</fields>
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchStore" />
+		<operationBinding operationType="custom" operationId="setStoreMasterInSession" archServerMethod="setStoreMasterInSession" />
+		
+	</operationBindings>	
+</DataSource>

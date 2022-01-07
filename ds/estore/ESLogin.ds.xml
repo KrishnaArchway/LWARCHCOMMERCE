@@ -1,0 +1,19 @@
+<DataSource
+    ID="ESLogin"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.estore.dmi.ESLoginDMI"
+    
+    >
+  
+    <fields>    	
+    	<field name="strLoginUserId" type="text" title="User Id"/>    	
+    	<field name="strPassword" type="password" title="Password1" />
+    </fields>
+    
+    <operationBindings>
+    	<operationBinding operationId="authenticate" operationType="authenticate"  archServerMethod="authenticateUser" />
+    	<operationBinding operationId="authenticateUser" operationType="custom" archServerMethod="authenticateUser" />
+    	<operationBinding operationId="forgotPassword" operationType="custom" archServerMethod="forgotPassword" />
+    	<operationBinding operationId="logoutUser" operationType="custom" archServerMethod="logoutUser" />
+    </operationBindings>
+</DataSource>

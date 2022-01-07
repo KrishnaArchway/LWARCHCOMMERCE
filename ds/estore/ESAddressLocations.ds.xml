@@ -1,0 +1,33 @@
+<DataSource
+	ID="ESAddressLocations" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.estore.dmi.ESAddressBookDMI">
+	
+	<fields>
+		<field name="lngAddressBookId" title="Address Book Id" />
+		<field name="lngUserId" title="User Id"  primaryKey="true"/>
+		<field name="strCompany" title="Company" />
+		<field name="strBillToFirstName" title="First Name" />
+		<field name="strBillToLastName"	title="Last Name" />
+		<field name="strBillToAddress1" title="Address 1" />
+		<field name="strBillToAddress2" title="Address 2" />
+		<field name="strBillToAddress3" title="Address 3" />
+		<field name="strBillToCountry" title="Country" />
+		<field name="strBillToCity" title="City" />
+		<field name="strBillToState" title="State" />
+		<field name="strBillToZip" title="Zip" />
+		<field name="strBillToDayPhoneNumber" title="Phone Number" />
+		<field name="strBillToFaxNumber" title="Fax" />
+		<field name="strBillToEmail" title="Email" />
+		<field name="strCreatedBy" title="Created By" />
+        <field name="dtCreationDate" title="Created On" />
+        <field name="strLastUpdateBy" title="Last Updated By" />
+        <field name="dtLastUpdateDate" title="Last Updated Date" />
+	</fields>
+	<operationBindings>
+		<operationBinding operationType="fetch" operationId="fetchLocations" archServerMethod="fetchAddressDetail" />
+		<operationBinding operationType="fetch"  operationId="fetchLocationsFromTempCache" archServerMethod="fetchAddressDetailFromTempCache" />
+		<operationBinding operationType="add" archServerMethod="addNewLocations" />	
+		<operationBinding operationType="custom" operationId="removeLocations" archServerMethod="deleteAddressBookLocations" />	
+	</operationBindings>
+</DataSource>	

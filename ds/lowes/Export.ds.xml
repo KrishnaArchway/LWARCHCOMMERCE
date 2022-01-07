@@ -1,0 +1,8 @@
+<DataSource
+	ID="Export" >
+	<operationBindings>
+		 <operationBinding operationId="download" operationType="custom" serverMethod="export" >
+         	<serverObject className="com.archway.lowes.export.dmi.ExportDMI"/>
+     	</operationBinding>
+	</operationBindings>	
+</DataSource>

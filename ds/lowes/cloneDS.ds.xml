@@ -1,0 +1,21 @@
+<DataSource
+	ID="cloneDS"
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWItemAssignDMI">
+
+	<fields>
+	<field name="lngCacheItemID"        type="long"     title="Cached Item ID" primaryKey="true" />
+	<field name="intReorderNumber" type="integer" title="Re-Order Number"/>
+	<field name="strItemDesc" type="text" title="Item Description"/>
+	<field name="strItemType" type="text" title="Item Type" />
+	<field name="strItemSubType" type="text" title="Item Sub Type"/>
+	<field name="intReorderQty" type="integer" title="Re-order Qty">
+	   <validators>
+			<validator type="integerRange" min="1" max="999" errorMessage="Please enter a value between ${min} and ${max}"/>
+			</validators>
+	</field>
+	</fields>
+	<operationBindings>
+				<operationBinding operationType="add"  operationId="cloneItem" archServerMethod="cloneItem" />
+	</operationBindings>
+</DataSource>

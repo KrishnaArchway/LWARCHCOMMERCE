@@ -1,0 +1,49 @@
+<DataSource
+	ID="SECEventHistory" 
+	serverConstructor = "com.archway.smartgwt.client.BatchDataSource"
+	archServerObject = "com.archway.sec.dmi.SECEventHistoryDMI" >
+	
+	
+	<fields>
+		<field name="lngEventId" primaryKey="true" title="Event Id"/>
+		<field name="strUserLoginId" type="text" title="Login Id" />
+		<field name="strEventFunction" type="text" title="Event Function" />
+		
+		<field name="enumEventType" type="enum" title="Event Type" >
+		    <valueMap>		        
+	    	    <value ID="LOGIN">LOGIN</value>
+				<value ID="LOGOUT">LOGOUT</value>
+				<value ID="CHANGE_PASSWORD">CHANGE_PASSWORD</value>
+				<value ID="LOCK_ACCOUNT">LOCK_ACCOUNT</value>
+				<value ID="INACTIVATE_ACCOUNT">INACTIVATE_ACCOUNT</value>
+				<value ID="ACTIVATE_ACCOUNT">ACTIVATE_ACCOUNT</value>
+			</valueMap>
+		</field>
+		<field name="enumEventLevel" type="enum" title="Event Level" >
+			<valueMap>
+	    	    <value ID="SUCCESS">SUCCESS</value>
+				<value ID="FALIURE">FALIURE</value>
+				<value ID="ERROR">ERROR</value>
+				<value ID="INFO">INFO</value>
+				<value ID="FATAL">FATAL</value>
+				<value ID="WARNING">WARNING</value>
+			</valueMap>
+		</field>
+		<field name="dtEventDate" type="datetime" title="Event Date" />
+		<field name="strAppType" type="text" title="Application Type" />
+		
+		
+		<field name="strExtIPAddress" type="text" title="External IP Address" />
+		<field name="strIntIPAddress" type="text" title="Internal IP Address" />
+		
+		<field name="strHost" type="text" title="Host" />
+		<field name="strEventMessage" type="text" title="Event Message" />
+		
+	</fields>
+	
+	
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchEventHistoryData" />
+	</operationBindings>
+</DataSource>
+

@@ -1,0 +1,18 @@
+<DataSource 
+	ID="ESContactUs" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.estore.dmi.ESContactUsDMI">
+	
+	<fields>
+		<field name="strFirstName" title="First Name" width="150" type="text" required="true"/>
+		<field name="strLastName" title="Last Name" width="150" type="text" required="true"/>
+		<field name="strTelephoneNumber" title="Telephone Number" width="150" type="text"/>
+		<field name="strEmailId" title="Email Address" width="150" type="text" required="true"/>				
+		<field name="strSubject" title="Subject" width="300" type="text" required="true"/>		
+		<field name="strComments" title="Question/Comments" width="300" type="textArea" required="true"/>		
+	</fields>
+	
+	<operationBindings>
+		<operationBinding operationId="sendContatUsDetailsEmail" operationType="custom" archServerMethod="sendContatUsDetailsEmail" />	
+	</operationBindings>
+</DataSource>	

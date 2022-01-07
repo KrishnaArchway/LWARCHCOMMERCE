@@ -1,0 +1,22 @@
+<DataSource
+	ID="LWInstoreOrderHistory" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWInstoreOrderHistoryDMI">
+	
+	<fields>
+		<field name="strActionMenu"         type="text" 	/>
+		<field name="strPONumber"           type="text" 	 primaryKey="true" 	title="PO #"  	/>		
+		<field name="strReorderNumber" 		type="text" 	title="Reorder #"	/>
+		<field name="strItemDesc" 		type="text" 	title="Description"/>
+		<field name="strItemTransit" 			type="text"  	title="Status"	 	/>
+		<field name="lngQty" 				type="number" 	title="Qty"	/>
+		<field name="lngQtyShipped" 		type="number"  	title="Qty Shipped" 	/>
+		<field name="strTrackingNumbers" 	type="text" 	title="Tracking Number(s)"	/>
+		<field name="strCarrierTrackingURL" 	type="LINK" title="Tracking Number(s)"		/>
+		<field name="strCollateralShipSource" 			type="text" 	title = "Ship From" />
+		
+	</fields>
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchOrderHistory" />
+	</operationBindings>	
+</DataSource>

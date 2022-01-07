@@ -1,0 +1,28 @@
+<!-- <DataSource ID="CHLogs"
+	serverConstructor="com.archway.fw.server.BatchDataSource"
+	archServerObject="com.archway.cache.dmi.CHLogDMI">
+	-->
+<DataSource ID="CHLogs"
+        serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+        archServerObject="com.archway.cache.dmi.CHLogDMI">
+
+	<fields>
+		<field name="lngLogId" 			type="long" 	title="Log Id" />
+		<field name="intClientId" 		type="int" 	    title="Client Id" />
+		<field name="strLogMsg"    		type="text" 	title="Client Name"/>
+		<field name="dtLogDate"  		type="datetime" useTextField="true" />		
+		<field name="strLogLevel"  		type="text" 	title="Log Level" />
+		<field name="strUserLoginId"  	type="text" 	title="User Login Id" />		
+		<field name="strProcess"  		type="text" 	title="Process" />
+		<field name="strAppType"  		type="text" 	title="App Type" />
+		<field name="strStatusFlag"  	type="text" 	title="Status Flag" />
+		<field name="strCreatedBy"  	type="text" 	title="Created By" />
+		<field name="dtCreationDate"  	type="date"   title="Last Update Date"  useTextField="false"/>
+         
+	</fields>
+
+	<operationBindings>
+		<operationBinding operationType="fetch"	archServerMethod="fetchLogs" />
+		<operationBinding operationType="custom" operationId="removeLogs" archServerMethod="removeLogs" />
+	</operationBindings>
+</DataSource>

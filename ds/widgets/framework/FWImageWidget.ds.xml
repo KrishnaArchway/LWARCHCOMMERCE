@@ -1,0 +1,1 @@
+<DataSource serverType="component" ID="FWImageWidget" inheritsFrom="Img" instanceConstructor="com.archway.smartgwt.client.widget.framework.FWImageWidget"/>

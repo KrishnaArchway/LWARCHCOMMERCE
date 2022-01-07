@@ -1,0 +1,31 @@
+<DataSource
+    ID="FSFiltersetDefinition"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+    archServerObject="com.archway.fw.dmi.FSFiltersetDefinitionDMI"
+   >   
+     <fields>
+     	<field name="strActionMenu"          type="text"    title="Actions"           canEdit="false"/>
+     	<field name="lngFiltersetId" type="long"   hidden="true" primaryKey="true" />
+      	<field name="strFunctionalArea" type="text"   hidden="true" />
+       	<field name="strFiltersetType" type="text"   hidden="true" />
+       	<field name="strFiltersetName"  type="text"  title="Name"  />         
+        <field name="strDescription"  type="text"  title="Description"  />        
+        <field nsame="strPublicFlag"  type="text" title="Public?"   hidden="true"/>        
+        <field name="strEnabledFlag"  type="text"   title="Enabled" hidden="true" >
+		 <valueMap>
+				<value ID="A">Active</value>
+				<value ID="D">Delete</value>
+				<value ID="I">Inactive</value>
+			</valueMap>
+		</field>         
+        <field name="strOwnerName"   type="text"  title="Owner"    hidden="true" />         
+        <field name="strCreatedBy"   type="text" title="Created By"   hidden="true"/>         
+        <field name="dtCreationDate"  type="date"  title="Creation Date"  useTextField="true" hidden="true"/>         
+        <field name="strLastUpdatedBy" type="text"  title="Last Updated By"  hidden="true"/>         
+        <field name="dtLastUpdateDate" type="date"  title="Last Update Date"  useTextField="true" hidden="true"/>         
+      </fields>
+        
+     <operationBindings>
+		<operationBinding operationType="fetch"  archServerMethod="fetchConditionSetList" />
+     </operationBindings>
+</DataSource>

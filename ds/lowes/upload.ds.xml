@@ -1,0 +1,26 @@
+<DataSource 
+	ID="upload" 
+	serverType="generic">
+
+	
+	<fields>
+		
+	   <field name="uploadItem" title="File" type="binary" width="200" showInline="false"/>	
+	   <field name="strReorderNumber" type="text" title="Re-Order Number" primaryKey="true"/>
+	   <field name="strItemDesc" type="text" title="Item Description"/>
+	   <field name="strAssociatedProductNumber" type="text" title="Associated Product Number" />
+	   <field name="strMsg" type="text" title="Upload Message"/>
+	   <field name="lngProjectID"	type="number" title="Project ID" />
+	 
+	</fields>
+	
+	<serverObject lookupStyle="new" className="com.archway.lowes.dmi.LWUploadDMI"></serverObject>
+	
+	<operationBindings>
+		<operationBinding operationType="viewFile" archServerMethod="fetchStatus" />
+		<operationBinding operationType="add" archServerMethod="com.archway.lowes.dmi.LWUploadDMI.add" />
+		
+		<!--  <operationBinding operationType="update" archServerMethod="com.archway.lowes.dmi.LWUploadDMI.upload" />
+		 -->
+	</operationBindings>
+</DataSource>	

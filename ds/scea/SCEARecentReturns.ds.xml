@@ -1,0 +1,38 @@
+<DataSource
+	ID="SCEARecentReturns" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEARecentReturnsDMI">
+	<fields>
+		<field name="strActionMenu" type="image"  title=" " size="20px" />
+		<field name="strType"    			type="text" title="Type"/>
+		<field name="strSource"    			type="text" title="Source"/>
+		<field name="dtDate"   				type="date" title="Date"/>
+		<field name="strClientOrderNum" 	type="text" title="Client Order Number"/>
+		<field name="strBillToID" 			type="text" title="Bill To ID"/>
+		<field name="strBillToName" 		type="text" title="Bill To Name"/>		
+		<field name="strShipToID"  			type="text" title="Ship To ID"/>
+		<field name="strShipToName"  		type="text" title="Ship To Name"/>
+		<field name="strOrderNumber" 		type="text" title="Order Number"/>
+		<field name="strOrderStatus" 		type="text" title="Order Status"/>		
+		<field name="strReason" 			type="text" title="Reason"/>
+		<field name="strStockNum" 			type="text" title="Stock Number"/>
+		<field name="strSKUDesc" 			type="text" title="SKU Description"/>
+		<field name="intQty" 				type="number"  title="Qty"/>
+		<field name="strCarrier" 			type="text" title="Carrier"/>
+		<field name="strShipmentType" 		type="text" title="Shipment Type"/>
+		<field name="strOutboundTracking" 	type="text" title="Outbound Tracking"/>
+		<field name="strOutboundStatus" 	type="text" title="Outbound Status"/>
+		<field name="strInboundTracking" 	type="text" title="Inbound Tracking"/>
+		<field name="strNotes" 				type="text" title="Notes"/>
+		<field name="strInBoundCarrierTrackingURL" 	type="link" title="Inbound Carrier URL"/>
+		<field name="strOutBoundCarrierTrackingURL" type="link" title="Outbound Carrier URL"/>
+
+	</fields>
+	<operationBindings>
+		<operationBinding operationType="fetch"   archServerMethod="fetchRecentReturns"/>
+		<operationBinding operationType="fetch" operationId="customExport" >  
+            <serverObject className="com.archway.scea.dmi.SCEARecentReturnsDMI" lookupStyle="new" />  
+             <serverMethod>customExport</serverMethod>  
+        </operationBinding>  
+	</operationBindings>
+</DataSource>

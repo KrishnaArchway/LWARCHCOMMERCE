@@ -1,0 +1,33 @@
+<DataSource
+	ID="SECAccessPolicy" 
+	serverConstructor = "com.archway.smartgwt.client.BatchDataSource"
+	archServerObject = "com.archway.sec.dmi.SECAccessPolicyDMI" >
+	
+	
+	<fields>
+		<field name="intClientId" primaryKey="true"/>
+		<field name="bolExpirationPolicyEnabled" type="checkbox" title="Expiration Policy Enabled" />
+		<field name="intPwdExpirationDays" type="text" title="Expiration Days" />
+		
+		<field name="bolAccountLockoutPolicyEnabled" type="checkbox" title="Account Lockout Policy Enabled" />
+		<field name="intInvalidAttemptCount" type="text" title="Invalid Attempt Count" />
+		<field name="lngInvalidAttemptTimespan" type="text" title="Invalid Attempt Timespan" />
+		<field name="lngMinsToKeepUserLocked" type="text" title="Lockout Time" />
+		
+		
+		<field name="bolPwdReusePolicyEnabled1" type="checkbox" title="Password Reuse Policy" />
+		<field name="intPwdReuseLimitDays1" type="text" title="Reuse Password After" />
+		
+		<field name="bolDisableAccountPolicyEnabled1" type="checkbox" title="Disable Account Policy" />
+		<field name="intInactivityPeriod1" type="text" title="Inactivity Period" />
+		
+	</fields>
+	
+	
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchAccessPolicy" />
+		<operationBinding operationType="add"   archServerMethod="saveAccessPolicy" />
+		<operationBinding operationType="update" archServerMethod="saveAccessPolicy" />
+	</operationBindings>
+</DataSource>
+

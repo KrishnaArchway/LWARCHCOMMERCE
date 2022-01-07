@@ -1,0 +1,1 @@
+<DataSource serverType="component" ID="FWAnnouncementWidget" inheritsFrom="ListGrid" instanceConstructor="com.archway.smartgwt.client.widget.framework.FWAnnouncementWidget"/>

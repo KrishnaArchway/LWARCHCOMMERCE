@@ -1,0 +1,17 @@
+<DataSource
+	ID="supplierDS"
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWSupplierDMI">
+	<fields>
+	<field name="supplierID" type="text" title="Supplier ID" primaryKey="true"/>
+	<field name="supplierName" type="text" title="Supplier"/>
+	 <field name="supplierContact" type="text" title="Supplier Contact"/>
+	 <field name="supplierEmail" type="text" title="Contact E-mail"/>
+	 <field name="supplierPhone" type="text" title="Contact Phone"/>
+	</fields>
+	
+	<operationBindings>
+		<operationBinding operationType="fetch"   archServerMethod="fetchSuppliersInfo"/>
+	</operationBindings>
+	
+</DataSource>

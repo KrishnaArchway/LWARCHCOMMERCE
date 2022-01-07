@@ -1,0 +1,38 @@
+<DataSource ID="LWInstorePlanogram" serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWInstorePlanogramDMI">	
+	
+	<fields>
+		<field name="strActionMenu" type="text" />
+		<field name="intPlgId" type="text" />
+		<field name="strPlgIndNbrTxt"  type="text" />
+		<field name="intPlgVrsNbr" type="text" /> 
+		<field name="intPlgFamNbr" type="text" /> 
+		<field name="strPlgNme" type="text" title="POG Name" /> 
+		<field name="intPlgStsCd" type="text"  /> 
+		<field name="strStsDesTxt" type="text" align="Status"/> 
+		<field name="intCapNbr" type="text" /> 
+		<field name="strPlgLayOutTxt" type="text" title="POG Comments" /> 
+		<field name="strCutNme" type="text" title="POG Market Specific" /> 
+		<field name="dblPlgHgtMsr" type="text" /> 
+		<field name="dblPlgDthMsr" type="text" /> 
+		<field name="dblPlgWdtMsr" type="text" /> 
+		<field name="intPmyPrdCgyCd" type="text" /> 
+		<field name="intPrdGrpNbr" type="text" /> 
+		<field name="strPrdCgyDesTxt" type="text" /> 
+		<field name="strSelDptTxt" type="text" /> 
+		<field name="dtBgnEfcDt" type="text" align="center" title="Date From" /> 
+		<field name="dtEndEfcDt" type="text" /> 
+		<field name="intBayCnt" type="text" /> 
+		<field name="dtCreDt" type="text" /> 
+		<field name="strSpmPrjUseCdId" type="text" /> 
+		<field name="strTfcFlwTxt" type="text" /> 	
+		<field name="strPlgDrawingLink" type="text" /> 
+		<field name="strPlgBomLink" type="text" title="BOM Report" /> 
+		<field name="strPlgWcrLink" type="text" title="What's Changed Report" /> 
+	</fields>
+	<operationBindings>
+			<!--  generic -->
+			<operationBinding operationType="fetch"   archServerMethod="fetchPlanograms"/>
+		
+	</operationBindings>
+</DataSource>

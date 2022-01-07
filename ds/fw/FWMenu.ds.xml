@@ -1,0 +1,36 @@
+<DataSource
+    ID="FWMenu"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.fw.dmi.FWMenuDMI"
+    >
+  
+    <fields>
+    
+   		
+   		<field name="lngParentMenuId" type="long" hidden ="true" foreignKey="FWMenu.lngMenuId"  />
+   		 
+    	<field name="lngMenuId" type="long" hidden ="true" primary="true"/>
+    	
+    	<field name="strMenuTitle" type="text"  />
+    	
+    	<field name="strMenuLabelKey" type="text" />
+    	
+    	<field name="strMenuHelpKey" type="text" />	
+    	
+    	<field name="blnAccessibleFlag" type="boolean"  hidden="true"  />
+    	
+    	<field name="blnVisibleFlag" type="boolean"  hidden="true"  />
+    	
+    	<field name="blnReadOnlyFlag" type="boolean"  hidden="true"  />
+    	
+    	<field name="strIconName" type="text"  hidden="true" />
+    	
+    	<field name="strActionMethod" type="text"  hidden="true"  />
+    
+    	</fields>
+    
+    <operationBindings>
+    	<operationBinding operationType="fetch"  archServerMethod="fetchMainMenu" />   	
+    	<operationBinding operationType="fetch" operationId="fetchCatalog" archServerMethod="fetchCatalog" />
+    </operationBindings>
+</DataSource>

@@ -1,0 +1,15 @@
+<DataSource
+    ID="ESDownloadDocument"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.estore.dmi.ESDownloadDocumentDMI">
+  
+    <fields>    	
+    	<field name="strDocumentName"/>    	
+    	<field name="strDocumentDescription"/>    	
+    </fields>
+    
+    <operationBindings>
+    	<operationBinding operationType="fetch" archServerMethod="fetchDocumentsList" />
+    </operationBindings>
+    
+</DataSource>

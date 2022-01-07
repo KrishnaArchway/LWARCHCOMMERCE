@@ -1,0 +1,38 @@
+<DataSource
+	ID="SCEAStoreSearch" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEAStoreSearchDMI">
+	
+	<fields>
+	    	<field name="strCompany"         	type="text"   		title="Store Name" />
+			<field name="strStoreNumber"   		type="text"       title="Store #"/>
+	  		<field name="strAddress"    		type="text"       title="Address"  hidden="true"/>
+	  		<field name="strFirstName"  		type="text"       title="First Name"/>
+	  		<field name="strLastName"   		type="text"       title="Last Name"/>
+	  		<field name="strPhoneNumber"      	type="text"       title="Phone"/>
+	  		<field name="strTerritory"  		type="text"       title="Territory" hidden="true"/>
+	  		<field name="strTid"       			type="text"       title="TID" hidden="true"/>
+	  		<field name="strAddressOne"  		type="text"       title="Street 1"/>
+			<field name="strAddressOne"  		type="text"       title="Street 2"/>	
+			<field name="strTidTerritory"   	type="text"       title="TID-Teritory"/>	
+      		<field name="strCity" 				type="text"       title="City" hidden="true"/>
+			<field name="strState"          	type="text"       title="State" hidden="true" />
+			<field name="strZip"   				type="text"       title="Zip" hidden="true"/>
+      		<field name="strDistrict"    		type="text"       title="District"/>
+      		<field name="strDistrictMgr"    	type="text"       title="District Manager"/>
+			<field name="strPSRep"         		type="text"       title="PSRep" hidden="true"/>
+			<field name="strStatus"         	type="text"       title="Status"/>			
+			<field name="strRegion"         	type="text"       title="Region"/>			
+			<field name="strNationalMgr"    	type="text"   title="National Manager"/>			
+			<field name="lngBpId" 				type="number"  title="Business Parter ID" hidden="true" primaryKey="true"/>			
+			<field name="strBusinessPartner"   type="text"   title="Business Partner" hidden="true"/>			
+			<field name="strBpType"         	type="text"   title="BP Type" />			
+						
+	</fields>	
+	
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchStoreSearch"/>
+		
+	</operationBindings>
+</DataSource>

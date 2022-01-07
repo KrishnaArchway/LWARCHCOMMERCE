@@ -1,0 +1,32 @@
+<List>
+	<psm>
+		<strPONumber>0011998678</strPONumber>
+		<strReorderNumber>30009</strReorderNumber>
+		<strItemDesc>30009 - HOLDER, PICK UP TICKET POC</strItemDesc>
+		<strExecStatus>Consolidating</strExecStatus>
+		<lngQty>1</lngQty>
+		<lngQtyShipped>0</lngQtyShipped>
+		<strTrackingNumbers></strTrackingNumbers>
+		<strCollateralShipSource>SSC Consolidation</strCollateralShipSource>
+	</psm>
+	<psm>
+		<strPONumber>0012003876</strPONumber>
+		<strReorderNumber>30009</strReorderNumber>
+		<strItemDesc>30066 - POSTER, CUSTOMER CARE PO</strItemDesc>
+		<strExecStatus>On Backorder</strExecStatus>
+		<lngQty>1</lngQty>
+		<lngQtyShipped>0</lngQtyShipped>
+		<strTrackingNumbers>Est Arrival 8/14/13</strTrackingNumbers>
+		<strCollateralShipSource>SSC Consolidation</strCollateralShipSource>
+	</psm>
+	<psm>
+		<strPONumber>30066</strPONumber>
+		<strReorderNumber>30009</strReorderNumber>
+		<strItemDesc>720670 - 3096 Wire M Divider - DFX65</strItemDesc>
+		<strExecStatus>Shipped</strExecStatus>
+		<lngQty>1</lngQty>
+		<lngQtyShipped>1</lngQtyShipped>
+		<strTrackingNumbers>549435963163402</strTrackingNumbers>
+		<strCollateralShipSource>COLONY INC - 0000</strCollateralShipSource>
+	</psm>
+</List>

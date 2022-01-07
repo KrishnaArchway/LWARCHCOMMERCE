@@ -1,0 +1,33 @@
+<DataSource
+	ID="ESAddressBook" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.estore.dmi.ESAddressBookDMI">
+	
+	<fields>
+		<field name="strActionMenu"       title="Action"  />
+		<field name="lngAddressBookId"    primaryKey="true"   />
+		<field name="strAddressBookName"    />
+		<field name="strAddressBookDesc"    />
+		<field name="lngAddressBookOwnerId"  />
+		<field name="strPublicFlag"          />
+		<field name="intClientId"            />
+		<field name="strStatusFlag"          > 
+        	<valueMap>
+				<value ID="A">Active</value>
+				<value ID="I">Inactive</value>
+			</valueMap>
+        </field>
+		<field name="strCreatedBy"        /> 
+        <field name="dtCreationDate"      /> 
+        <field name="strLastUpdateBy"     /> 
+        <field name="dtLastUpdateDate"    />        
+	</fields>
+	
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchAddressBook" />
+	    <operationBinding operationType="remove" archServerMethod="deleteAddressBook" />
+	    <operationBinding operationType="custom" operationId="saveAddressBoook" archServerMethod="saveAddressBook" />  
+	    <operationBinding operationType="fetch" operationId="verifyAddressBoookName" archServerMethod="verifyAddressBoookName" />
+	</operationBindings>
+</DataSource>
+

@@ -1,0 +1,37 @@
+<List>
+	<reset>
+		<strProjectCode>RESET 16492</strProjectCode>
+		<strProjectName>CS-DECORATIVE SHEVLING AND RAILS PLR-Decor</strProjectName>
+		<strDivision>HOME FASION, ORGANIZATION</strDivision>
+		<lngEstHrs>6</lngEstHrs>
+		<strLaborType>PSA</strLaborType>
+	</reset>
+	<reset>
+		<strProjectCode>RESET 16670</strProjectCode>
+		<strProjectName>CS-Mops and Brooms PLR 224 RESET16670</strProjectName>
+		<strDivision>HOME FASION, CLEANING</strDivision>
+		<lngEstHrs>28</lngEstHrs>
+		<strLaborType>PSA</strLaborType>
+	</reset>
+	<reset>
+		<strProjectCode>RESET 16717</strProjectCode>
+		<strProjectName>RP- Drain Cleaning Tools PLR 279 RESET16717</strProjectName>
+		<strDivision>ROUGH PLUMBING</strDivision>
+		<lngEstHrs>1</lngEstHrs>
+		<strLaborType>PSA</strLaborType>
+	</reset>
+	<reset>
+		<strProjectCode>RESET 16775</strProjectCode>
+		<strProjectName>HW - Key Huts</strProjectName>
+		<strDivision>HARDWARE</strDivision>
+		<lngEstHrs>8</lngEstHrs>
+		<strLaborType>3rd party</strLaborType>
+	</reset>
+	<reset>
+		<strProjectCode>RESET 18044</strProjectCode>
+		<strProjectName>Gift Card Mall POG Update RESET18044</strProjectName>
+		<strDivision>CORPORATE</strDivision>
+		<lngEstHrs>2</lngEstHrs>
+		<strLaborType>PSA</strLaborType>
+	</reset>
+</List>

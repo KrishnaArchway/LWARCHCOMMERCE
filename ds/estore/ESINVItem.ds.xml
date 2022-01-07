@@ -1,0 +1,95 @@
+<DataSource
+	ID="ESINVItem"
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+	archServerObject="com.archway.estore.dmi.ESTemplateOrderDMI">
+	
+	<fields>
+		<field name="bolSelectionAppearance" type="boolean" default="false"/>
+		<field name="intClientId" type="int" hidden="true"  />                          
+		<field name="lngTemplateOrderId" type="long" hidden="true"/>
+		<field name="lngItemId" type="long" hidden="true" primaryKey="true"/>
+		<field name="strItemNumber" type="link" width="150" hidden="true"/>
+		<field name="strUpc"  width="" type="text" hidden="true"/>
+		<field name="strItemDescription"  type="text"/>
+		<field name="strEstoreDescription" type="text" hidden="true"/>
+		<field name="strDepartment" type="text"   hidden="true"/>
+		<field name="strCostcenter" type="text"   hidden="true"/>
+		<field name="strItemType" type="text" hidden="true"/>
+		<field name="strUOM" type="text" width="70" hidden="true"/>
+		<field name="strUOMDescription" type="text" hidden="true"/>
+		<field name="lngUOMQty" type="long" width="70" hidden="true"/>
+		<field name="dblUnitCost" type="double" width="80" hidden="true"/>
+		<field name="dblPickCost" type="double" hidden="true"/>
+		<field name="dtUnavailableUntil" type="date" hidden="true"/>
+		<field name="dtUnavailableAfter" type="date" hidden="true"/>
+		<field name="dtDiscontinuedFrom" type="date" hidden="true"/>
+		<field name="strExtendedStatus" type="text" hidden="true"/>
+		<field name="strMoreInfoUrl" type="text" hidden="true"/>
+		<field name="dblLength" type="double" hidden="true"/>
+		<field name="dblWidth"  type="double" hidden="true"/>
+		<field name="dblHeight"  type="double" hidden="true"/>
+		<field name="dblWeight"  type="double" hidden="true"/>
+		<field name="strDisplayOnEstoreFlag"  type="text" hidden="true"/>
+		<field name="strPODItemFlag" type="text" hidden="true"/>
+		<field name="strW2PItemFlag" type="text" hidden="true"/>
+		<field name="strDisplayUnitPriceFlag" type="text" hidden="true"/>
+		<field name="strBillableFlag" type="text" hidden="true"/>
+		<field name="strTaxableFlag" type="text" hidden="true"/>
+		<field name="strDropshipItemFlag" type="text" hidden="true"/>
+		<field name="strVendorItemNumber" type="text" hidden="true"/>
+		<field name="strFeaturedItemFlag" type="text" hidden="true"/>
+		<field name="strHoldItemFlag" type="text" hidden="true"/>
+		<field name="strAllowBackorderFlag" type="text" hidden="true"/>
+		<field name="strPremiumItemFlag" type="text" hidden="true"/>
+		<field name="strOversizeItemFlag"  type="text" hidden="true"/>
+		<field name="strLotNoRequiredFlag"  type="text" hidden="true"/>
+		<field name="strArrivalDateRequiredFlag"  type="text" hidden="true"/>
+		<field name="strItemSubstitutionFlag"  type="text" hidden="true"/>
+		<field name="strThumbnailImage"  type="text" width="80" hidden="true"/>
+		<field name="strTileImage"  type="text" />
+		<field name="strProductImage"   type="text" hidden="true"/>  
+		<field name="strDC"  type="text" hidden="true"/>
+		<field name="strPickingInstruction"  type="text" hidden="true"/>
+		<field name="strPackingInstructions"  type="text" hidden="true"/>
+		<field name="strComments"  type="text" hidden="true"/>
+		<field name="strViewOnlyItemFlag"  type="text" hidden="true"/>
+		<field name="dblUnitPrice"  type="double" width="80" hidden="true"/>
+		<field name="dtNextReceivingDate"  type="date" hidden="true"/>
+		<field name="strJobNumber"  type="text"  hidden="true"/>
+		<field name="strDisplayStatusDesc"  type="text" hidden="true"/>
+		<field name="strQuantityLimitFlag"  type="text" hidden="true"/>
+		<field name="lngOriginalLimitQty"   type="long" hidden="true"/>
+		<field name="lngAvailableQty" type="long" width="60" hidden="true"/>
+		<field name="lngAllocatedQty" type="long" width="60" hidden="true"/>
+		<field name="lngMaxQty" type="long" width="70" hidden="true"/>
+		<field name="lngDisplayItemQty" type="long" width="80" hidden="true"/>
+		<field name="lngOrderedQty" type="long"  width="80" hidden="true"/>
+		<field name="dblTotalPrice" type="text" width="120" hidden="true"/>
+		<field name="dblTotalCost" type="text" width="120" hidden="true"/>
+		<field name="strStatusFlag"  type="text" hidden="true" >
+		<valueMap>
+			<value ID="A">Active</value>
+			<value ID="I">Inactive</value>
+		</valueMap>
+		</field>
+				
+		<field name="strTempReferenceKey"  hidden="true"/>		
+		<field name="strCreatedBy"  hidden="true"/>
+		<field name="dtCreationDate"  hidden="true"/>
+		<field name="strLastUpdateBy"  hidden="true"/>
+		<field name="dtLastUpdateDate"  hidden="true"/>
+	</fields>
+
+	<operationBindings allowMultiUpdate="false">	
+		<operationBinding operationType="fetch"  archServerMethod="fetchItems" />   	
+		<operationBinding operationType="add"    archServerMethod="addItems" />   	
+		<operationBinding operationType="remove" archServerMethod="deleteItems" />   	
+		
+		<!--  for Items Display   -->
+	    <operationBinding operationType="fetch"  operationId="fetchItems" archServerMethod="com.archway.estore.dmi.ESINVItemDMI.fetchItems" />
+	    <operationBinding operationType="fetch"  operationId="fetchItemsFromTempCache" archServerMethod="com.archway.estore.dmi.ESINVItemDMI.fetchItemsFromTempCache" />
+	    <operationBinding operationType="custom" operationId="getItemDetail" archServerMethod="com.archway.estore.dmi.ESINVItemDMI.getItemDetail" />
+	    <operationBinding operationType="custom" operationId="deleteItemsFromTemplate" archServerMethod="com.archway.estore.dmi.ESTemplateOrderDMI.deleteItems" />
+		
+	</operationBindings>
+</DataSource>

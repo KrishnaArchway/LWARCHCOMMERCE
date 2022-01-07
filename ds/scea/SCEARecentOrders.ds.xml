@@ -1,0 +1,20 @@
+<DataSource
+	ID="SCEARecentOrders" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEARecentOrdersDMI" >	
+	<fields>
+		<field name="strActionMenu" type="image"  title=" " size="20px" />
+		<field name="strOrderNumber"         type="text"    	title="Order#" primaryKey="true" />
+		<field name="strGEMOrderNum"           type="text" 	title="Gem Order#"/>
+		<field name="dtOrderDate"        type="text"     title="Order Date" />
+		<field name="strShipToName" 			type="text" 	title="Ship To Name" />
+		<field name="strOrderTaker" 			type="text" 	title="Order Taker"/>
+		<field name="strOrderType" 			type="text" 	title="Order Type"/>
+		<field name="strStatus" 			type="text" 	title="Status"/>
+		<field name="strShipToAddress" type="text" title="Ship to Address"/>
+	</fields>
+	
+	<operationBindings>
+		<operationBinding operationType="fetch"   archServerMethod="fetchRecentOrders"/>
+	</operationBindings>
+</DataSource>

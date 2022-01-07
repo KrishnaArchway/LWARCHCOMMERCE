@@ -1,0 +1,49 @@
+<DataSource
+    ID="AWCScreenProperties"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.core.dmi.AWCSecurityDMI"
+    >
+  
+    <fields>
+        <field name="lngScreenPropertyId"                        type="long"     hidden="true" primaryKey="true" /> 
+		<field name="intClientId"                                type="integer"  hidden="true"/>
+      	<field name="strScreenCode"                              type="text"     hidden="true" />
+        <field name="strSectionCode"                             type="text"     hidden="true" />
+        <field name="strComponentCode"                           type="text"     hidden="true" />
+        <field name="strFieldCode"                               type="text"     hidden="true" />
+        <field name="strFieldName"                               type="text"     hidden="true" />
+        <field name="strFieldDesc"                               type="text"     hidden="true" />
+        <field name="strDatatype"                                type="text"     hidden="true" />
+        <field name="strFieldType"                               type="text"     hidden="true" />
+        <field name="intFieldSize"                               type="integer"  hidden="true" />
+        <field name="intDecimalPoints"                           type="integer"  hidden="true" />
+        <field name="strFormatMask"                              type="text"     hidden="true" />
+        <field name="strDropDownName"                            type="text"     hidden="true" />
+        <field name="strDependentDropDownFields"                 type="text"     hidden="true" />
+        <field name="strAccesibleFlag"                           type="text"     hidden="true" />
+        <field name="strVisibleFlag"                             type="text"     hidden="true" />
+        <field name="strReadOnlyFlag"                            type="text"     hidden="true" />
+        <field name="strRequiredFlag"                            type="text"     hidden="true" />
+        <field name="strSortAllowed"                             type="text"     hidden="true" />
+        <field name="strGroupAllowed"                            type="text"     hidden="true" />
+        <field name="strIncludeInExport"                         type="text"     hidden="true" />
+        <field name="strDefaultValue"                            type="text"     hidden="true" />
+        <field name="strDefaultValueMethod"                      type="text"     hidden="true" />
+        <field name="strDependentFieldsDefaultValueMethods"      type="text"     hidden="true" />
+        <field name="strIconName"                                type="text"     hidden="true" />
+        <field name="strActionMethod"                            type="text"     hidden="true" />
+        <field name="strBeanPropertyName"                        type="text"     hidden="true" />
+        <field name="strDDDescBeanPropertyName"                  type="text"     hidden="true" />
+        <field name="strLabelKey"                            	 type="text"     hidden="true" />
+        <field name="strHelpKey"                            	 type="text"     hidden="true" />
+		<field name="strStatusFlag"                              type="text"     hidden="true" />
+		<field name="strCreatedBy"                               type="text"     hidden="true" />
+        <field name="dtCreationDate"                             type="date"     hidden="true" />
+        <field name="strLastUpdateBy"                            type="text"     hidden="true" />
+        <field name="dtLastUpdateDate"                           type="date"     hidden="true" />
+	</fields>
+    
+    <operationBindings>
+    	<operationBinding operationType="fetch"  archServerMethod="fetchScreenProperties" />   	
+    </operationBindings>
+</DataSource>

@@ -1,0 +1,19 @@
+<DataSource
+	ID="SCEATrackItems" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEATrackItemsDMI">	
+	
+	<fields>
+			<field name="strPackage"  		 	type="text"       title="Package"/>
+	  		<field name="strShipmentType"    	type="text"   	  title="Shipment Type"/>
+			<field name="strTrackingNumber" 	type="text"       title="Tracking #"/>
+			<field name="strCarrier" 			type="text"       title="Carrier" />
+					
+	</fields>	
+	
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchTrackItems"/>
+		
+	</operationBindings>
+</DataSource>

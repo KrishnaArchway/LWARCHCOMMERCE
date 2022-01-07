@@ -1,0 +1,26 @@
+<DataSource
+	ID="LWInstorePSM" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWInstorePSMDMI" >
+
+	<fields>
+		<field name="strActionMenu"         type="text"    	   	/>
+		<field name="strPONumber"           type="text" 	title="PO #"  	/>		
+		<field name="strReorderNumber" 		type="text" 	title="Reorder #"	/>
+		<field name="strExecStatus" 		type="text" 	title="Status"	/>
+		<field name="strDepDesc" 			type="text" 	title="Department"	/>
+		<field name="strItemDesc" 			type="text" 	 	title="Description"/>
+		<field name="strItemTransit" 		type="text" title="Status"	 	/>
+		<field name="lngQty" 				type="number" 	title="Qty"	/>
+		<field name="lngQtyShipped" 		type="number" 	title="Qty Shipped" 	/>
+		<field name="strCarrier" 	type="text" 	title="Carrier"	/>
+		<field name="strBox" 	type="text" 	title="Box"	/>
+		<field name="strContainer" 	type="text" 	title="Container"	/>
+		<field name="strTrackingNumbers" 	type="LINK" 	title="Tracking Number(s)"	/>
+		<field name="strCarrierTrackingURL" 	type="LINK" title="Carrier Tracking URL"		/>
+		<field name="strCollateralShipSource" 	type="text" title="Ship From"		/>		
+	</fields>
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchPsm" />
+	</operationBindings>	
+</DataSource>

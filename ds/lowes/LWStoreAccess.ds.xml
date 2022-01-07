@@ -1,0 +1,17 @@
+<DataSource
+	ID="LWStoreAccess" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWStoreAccessDMI">
+	
+	<fields>
+		
+		<field name="strStoreNumber"           type="text" 	title="Store Number"  primaryKey="true"   	 />
+		<field name="strStoreName"   type="text"    	title="Store Name"          	/>
+		<field name="blnOpenFlag" 		 type="boolean"	 	title="Status" 		/>
+	</fields>
+	
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchStoreAccess" />
+		<operationBinding operationType="update" archServerMethod="updateStoreStatus"  />
+	</operationBindings>
+</DataSource>

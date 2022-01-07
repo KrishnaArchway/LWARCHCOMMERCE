@@ -1,0 +1,36 @@
+<DataSource
+ID="LWInstoreRetails" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWInstoreRetailDMI" >
+	<fields>
+	 <field name="strActionMenu"         type="text"        title="Action"	   	  />
+	<field name="intClientId"  		   	 type="text"    	title="ClientId"      />
+	<field name="strProjectCode"         type="text"    	title="ProjectCode"   />	
+	<field name="lngPLGID"               type="text"    	title="PLGID"      />
+	<field name="lngPRDNumber"           type="text"    	title="PRDNumber"  />
+	<field name="strStoreNumber"         type="text"    	title="StoreNumber"/>
+	<field name="dtCalDate"              type="text"    	title="CalDate"     />
+	<field name="intItmLctStkCd"  		 type="text"    	title="ItmLctStkCd">
+		<valueMap>
+			<value ID="1">Stocked</value>
+			<value ID="0">Non-Stocked</value>
+		</valueMap>
+	</field>
+	<field name="strPONumber"            type="text"    	title="PONumber"   />	
+	<field name="lngInvOnHandQty"        type="text"    	title="InvOnHandQty"	/>
+	<field name="lngCMIInvQty"           type="text"    	title="CMIInvQty"   	/>
+	<field name="lngReqQty"              type="text"    	title="ReqQty"    	/>
+	<field name="lngDmgQty"              type="text"    	title="DmgQty"    	/>
+	<field name="strUnitPackDesc"        type="text"    	title="UnitPackDesc" />
+	<field name="dtLstRcvDate"           type="text"    	title="LstRcvDate"    />
+	<field name="strPRDNbrDesc"          type="text"    	title="PRDNbrDesc"   />
+	<field name="dtCreationDate"         type="text"    	title="CreationDate"  />
+	<field name="strCreatedBy"           type="text"    	title="CreatedBy"    />
+	<field name="dtLastUpdateDate"       type="text"    	title="LastUpdateDate"/>
+	<field name="strLastUpdateBy"        type="text"    	title="LastUpdateBy" />	
+	</fields>
+	<operationBindings>
+		 <operationBinding operationType="fetch" archServerMethod="fetchRetails" />
+	</operationBindings>	
+	
+</DataSource>

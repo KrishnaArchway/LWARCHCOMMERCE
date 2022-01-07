@@ -1,0 +1,32 @@
+<List>
+	<backorder>
+		<strProjectCode>RESET13382</strProjectCode>
+		<strReorderNumber>P121285</strReorderNumber>
+		<strItemDesc>Signage, Good Neighbor Swing Sign</strItemDesc>
+		<strExecStatus>Backordered</strExecStatus>
+		<lngQty>5</lngQty>
+		<lngQtyShipped>0</lngQtyShipped>
+		<strTrackingNumbers>Est Arrival 8/14/13</strTrackingNumbers>
+		<strCollateralShipSource>SSC Consolidation</strCollateralShipSource>
+	</backorder>
+	<backorder>
+		<strProjectCode>RESET13382</strProjectCode>
+		<strReorderNumber>P121286</strReorderNumber>
+		<strItemDesc>Signage, Left Fashion Motion Beam</strItemDesc>
+		<strExecStatus>Backordered</strExecStatus>
+		<lngQty>5</lngQty>
+		<lngQtyShipped>0</lngQtyShipped>
+		<strTrackingNumbers>Est Arrival 8/14/13</strTrackingNumbers>
+		<strCollateralShipSource>SSC Consolidation</strCollateralShipSource>
+	</backorder>
+	<backorder>
+		<strProjectCode>RESET13382</strProjectCode>
+		<strReorderNumber>P121286</strReorderNumber>
+		<strItemDesc>Signage, Right Fashion Motion Beam</strItemDesc>
+		<strExecStatus>Backordered</strExecStatus>
+		<lngQty>5</lngQty>
+		<lngQtyShipped>0</lngQtyShipped>
+		<strTrackingNumbers>Est Arrival 8/14/13</strTrackingNumbers>
+		<strCollateralShipSource>SSC Consolidation</strCollateralShipSource>
+	</backorder>
+</List>

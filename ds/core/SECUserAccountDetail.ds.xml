@@ -1,0 +1,22 @@
+<DataSource
+	ID="SECUserAccountDetail" 
+	serverConstructor = "com.archway.smartgwt.client.BatchDataSource"
+	archServerObject = "com.archway.sec.dmi.SECUserAccountDetailDMI" >
+	
+	<fields>
+		<field name="strUserLoginId" type="text" title="Login Id" primaryKey="true" width="10%"/>
+		<field name="dtNextPasswordChangeDate" type="datetime" title="Next Password Change Date" width="15%" />
+		
+		<field name="dtLastLoginAttemptDate" type="datetime" title="Last Login Date" width="15%"/>
+		<field name="dtLastSuccessLoginDate" type="date" title="Last Sucessfull Login Date" width="20%"/>
+		<field name="intLoginAttemptCount" type="text" title="Login Attempts" width="10%"/>
+		<field name="dtUserLockedTime" type="datetime" title="User Locked Date" width="*"/>
+		
+	</fields>
+	
+	
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchUserAccountDetails" />
+	</operationBindings>
+</DataSource>
+

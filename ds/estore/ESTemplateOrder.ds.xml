@@ -1,0 +1,32 @@
+<DataSource
+    ID="ESTemplateOrder"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.estore.dmi.ESTemplateOrderDMI">
+  
+    <fields>
+    	<field name="strActionMenu"     title="Action"    />
+		<field name="lngTemplateOrderId"    primaryKey="true" />
+		<field name="strTemplateOrderName" />
+		<field name="strTemplateOrderDesc"  />
+		<field name="lngTemplateOrderOwnerId"  />
+		<field name="strPublicFlag"  />
+		<field name="intClientId"           />
+		<field name="strStatusFlag"         > 
+        	<valueMap>
+				<value ID="A">Active</value>
+				<value ID="I">Inactive</value>
+			</valueMap>
+        </field>
+		<field name="strCreatedBy"          /> 
+        <field name="dtCreationDate"        /> 
+        <field name="strLastUpdateBy"       /> 
+        <field name="dtLastUpdateDate"      />
+    </fields>
+    
+    <operationBindings>
+    	<operationBinding  operationType="custom" operationId="saveItemToTemplate"  archServerMethod="saveItemsToTemplate" />   	
+    	<operationBinding operationType="fetch"  archServerMethod="fetchTemplateOrders" />   	
+    	<operationBinding operationType="custom"  operationId="deleteTemplateOrder" archServerMethod="deleteTemplateOrder" />   	
+    	<operationBinding operationType="update"  archServerMethod="updateTemplates" />
+    </operationBindings>
+</DataSource>

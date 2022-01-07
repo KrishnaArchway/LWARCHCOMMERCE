@@ -1,0 +1,25 @@
+<DataSource 
+	ID="LWInstoreVisibilityItemReorderHistory" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWInstoreReorderDMI">
+	
+	<fields>
+		<field name="intClientId" title="Client Id" width="150" type="int" />
+		<field name="intLwProjectReorderId" title="Project Reorder Id" width="150" type="int" />
+		<field name="strStoreNumber" title="Store Number" width="150" type="text"/>
+		<field name="intProjectNumber" title="Projet Number" width="150" type="text" />				
+		<field name="strReorderNumber" title="Reorder Number" width="300" type="text" />		
+		<field name="intQuantity" title="Quantity" width="300" type="text" />		
+		<field name="strReason" title="Reason" width="300" type="text" />		
+		<field name="strComments" title="Comments" width="300" type="text" />		
+		<field name="dtCreationDate" title="Creation Date" width="300" type="datetime" />		
+		<field name="strCreatedBy" title="Created By" width="300" type="text" />		
+		<field name="dtLastUpdateDate" title="Last Updated On" width="300" type="datetime" />		
+		<field name="strLastUpdateBy" title="Last Updated By" width="300" type="text" />
+		<field name="strPOStatus" title="PO Status" width="300" type="text" />		
+	</fields>
+	
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchReorderHistory" />	
+	</operationBindings>
+</DataSource>	

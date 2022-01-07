@@ -1,0 +1,418 @@
+<DataSource
+	ID="LWItem" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.lowes.dmi.LWItemDMI">
+	
+	<fields>
+	
+		
+		<field name="strActionMenu"         type="text"    	title="Actions"/>
+		<field name="intClientId"           type="integer" 	title="Client Id"/>
+		<field name="lngCacheItemID"        type="long"     title="Cached Item ID" primaryKey="true" />
+		<field name="lngProjectID" 			type="long" 	title="Project ID" foreignKey="LWProject.lngProjectID" />
+		<field name="lngItemID" 			type="long" 	title="Item ID"/>
+		<field name="strItemTypeSelector" type="text" title="Item Type Selector">
+			<valueMap>
+				<value ID="G">Graphics</value>
+				<value ID="F">Fixtures/Display</value>
+			</valueMap>
+		</field>
+		
+		<field name="strItemType" type="text" title="Item Type">
+			<valueMap>				
+				<value ID="Direct Mail">Direct Mail</value>
+				<value ID="Hardware and Accessories">Hardware and Accessories</value>
+				<value ID="Literature">Literature</value>
+				<value ID="Product Display">Product Display</value>
+				<value ID="Signage">Signage</value>				
+			</valueMap>
+		</field>
+		<field name="strItemSubType" type="text" title="Item Sub Type">
+			<valueMap>
+				<value ID="Backer Panel">Backer Panel</value>
+				<value ID="Booklet">Booklet</value>
+				<value ID="Brochure">Brochure</value>
+				<value ID="Catalog">Catalog</value>
+				<value ID="C-Channel">C-Channel</value>
+				<value ID="Channel">Channel</value>
+				<value ID="Clip">Clip</value>
+				<value ID="Coupon Program">Coupon Program</value>
+				<value ID="Decal">Decal</value>
+				<value ID="Flipbook">Flipbook</value>
+				<value ID="Flyer">Flyer</value>
+				<value ID="Frame">Frame</value>
+				<value ID="Freestanding">Freestanding</value>
+				<value ID="General In Bay">General In Bay</value>
+				<value ID="Header">Header</value>
+				<value ID="Holder">Holder</value>
+				<value ID="J-Hook">J-Hook</value>
+				<value ID="Magazine">Magazine</value>
+				<value ID="Mailer">Mailer</value>
+				<value ID="Mega Graphic">Mega Graphic</value>
+				<value ID="Non-working">Non-working</value>
+				<value ID="Other">Other</value>
+				<value ID="Peghook">Peghook</value>
+				<value ID="Product Card">Product Card</value>
+				<value ID="Product Sample">Product Sample</value>
+				<value ID="Side Panel">Side Panel</value>
+				<value ID="Snap Channel">Snap Channel</value>
+				<value ID="Tear pad">Tear pad</value>
+				<value ID="Universal Display Board">Universal Display Board</value>
+				<value ID="Universal Graphic">Universal Graphic</value>
+				<value ID="Upright Mount">Upright Mount</value>
+				<value ID="Wayfinding/Directional">Wayfinding/Directional</value>			
+			</valueMap>
+		</field>
+		
+		<field name="strItemStatus" type="text" title="Item Status">
+			<valueMap>
+			<value ID="A">Active</value>
+			<value ID="D">Deleted</value>
+		</valueMap>
+		
+		</field>
+		
+		<field name="strItemClonedFrom" type="text" title="Cloned from"/>
+		<field name="strItemDesc" type="text" title="Item Description" length="1000"/>
+	
+	
+		<field name="strReorderNumber" type="text" title="Re-Order Number"/>
+		<field name="intRolloutQty" type="integer" title="Roll out Quantity" length="12" />
+		
+		<field name="strIntendedLifeSpan" type="text" title="Intended Life Span">
+			<valueMap>
+				<value ID="SN">Seasonal</value>
+				<value ID="1M">1 Month</value>
+				<value ID="2M">2 Months</value>
+				<value ID="3M">3 Months</value>
+				<value ID="6M">6 Months</value>
+				<value ID="12M">12 Months</value>
+				<value ID="24M">24 Months</value>
+				<value ID="24PM">24+ Months</value>
+			</valueMap>
+		</field>
+		
+		<field name="strDimensionsIn" type="text" title="Dimensions In">
+			<valueMap>
+				<value ID="F">Feet</value>
+				<value ID="I">Inches</value>
+				<value ID="C">Centimeters</value>
+				<value ID="M">Millimeters</value>
+			</valueMap>
+		</field>
+		<field name="strPOGDimensionsIn" type="text" title="POG Dimensions In">
+			<valueMap>
+				<value ID="F">Feet</value>
+				<value ID="I">Inches</value>
+				<value ID="C">Centimeters</value>
+				<value ID="M">Millimeters</value>
+			</valueMap>
+		</field>
+		
+		
+		<field name="strDepartment" type="text" title="Department">
+			<valueMap>
+				<value ID="Appliances">Appliances</value>
+				<value ID="Building Materials">Building Materials</value>
+				<value ID="Cabinets &amp; Countertops">Cabinets &amp; Countertops</value>
+				<value ID="Cleaning and Storage">Cleaning and Storage</value>
+				<value ID="Corporate Rotation">Corporate Rotation</value>
+				<value ID="Credit">Credit</value>
+				<value ID="DECOR">DECOR</value>
+				<value ID="Direct Mail">Direct Mail</value>
+				<value ID="Exterior Signage">Exterior Signage</value>
+				<value ID="Fashion Lighting">Fashion Lighting</value>
+				<value ID="Fashion Plumbing">Fashion Plumbing</value>
+				<value ID="Flooring">Flooring</value>
+				<value ID="Front End">Front End</value>
+				<value ID="Hardware">Hardware</value>
+				<value ID="Home Fashions">Home Fashions</value>
+				<value ID="Impact">Impact</value>
+				<value ID="Installed Special Order Sales">Installed Special Order Sales</value>
+				<value ID="Lawn &amp; Garden (Lawn/Landscaping or Outside Lawn/Garden)">Lawn &amp; Garden (Lawn/Landscaping or Outside Lawn/Garden)</value>
+				<value ID="Lumber">Lumber</value>
+				<value ID="Marketing">Marketing</value>
+				<value ID="Millwork">Millwork</value>
+				<value ID="Nursery">Nursery</value>
+				<value ID="Other">Other</value>
+				<value ID="Outdoor Power Equipment">Outdoor Power Equipment</value>
+				<value ID="Overall Store">Overall Store</value>
+				<value ID="Paint">Paint</value>
+				<value ID="Promo">Promo</value>
+				<value ID="ProServices">ProServices</value>
+				<value ID="Rough Electrical">Rough Electrical</value>
+				<value ID="Rough Plumbing">Rough Plumbing</value>
+				<value ID="Safety">Safety</value>
+				<value ID="Scan Books">Scan Books</value>
+				<value ID="Seasonal Living">Seasonal Living</value>
+				<value ID="Seasonal Theme">Seasonal Theme</value>
+				<value ID="Special Value">Special Value</value>
+				<value ID="Tools">Tools</value>
+				<value ID="Training/Recruiting">Training/Recruiting</value>
+			</valueMap>
+		</field>
+		
+		<field name="strCountrySupported" type="text" title="Country Supported">
+			<valueMap>
+				<value ID="USA">USA</value>
+				<value ID="Canada">Canada</value>
+				<value ID="Mexico">Mexico</value>
+			</valueMap>
+		</field>
+		
+		<field name="strSameAsProductDimensions" type="text" title="Same as Product Dimensions"/>
+		<field name="strDepthDimensionsIn" type="text" title="Depth Dimensions in">
+			<valueMap>
+				<value ID="F">Feet</value>
+				<value ID="I">Inches</value>
+				<value ID="C">Centimeters</value>
+				<value ID="M">Millimeters</value>
+				<value ID="P">Points</value>
+				<value ID="L">Pounds</value>
+				<value ID="O">Ounces</value>
+				<value ID="OT">Others</value>
+			</valueMap>
+		</field>
+
+		<field name="dblHeight" type="float" title="Height" length="11"/>
+		<field name="dblWidth" type="float" title="Width" length="11"/>
+		<field name="dblDepth" type="float" title="Depth" length="11"/>
+		<field name="dblWeight" type="float" title="Weight" length="11"/>
+		<field name="dblPOGHeight" type="float" title="POG Height" length="11"/>
+		<field name="dblPOGWidth" type="float" title="POG Width" length="11"/>
+		<field name="dblPOGDepth" type="float" title="POG Depth" length="11"/>
+		<field name="dblPOGWeight" type="float" title="POG Weight " length="11"/>
+	
+		<field name="strSubstrate" type="text" title="Substrate">
+		    <valueMap>
+				<value ID="0.01 Styrene">0.01 Styrene</value>
+				<value ID="0.02 Styrene">0.02 Styrene</value>
+				<value ID="0.03 Styrene">0.03 Styrene</value>
+				<value ID="0.04 Styrene">0.04 Styrene</value>
+				<value ID="0.06 Styrene">0.06 Styrene</value>
+				<value ID="0.1 Styrene">0.1 Styrene</value>
+				<value ID="3mm PVC/Sintra">3mm PVC/Sintra</value>
+				<value ID="6mm PVC/Sintra">6mm PVC/Sintra</value>
+				<value ID="3mm Sintra">3mm Sintra</value>
+				<value ID="6mm Sintra">6mm Sintra</value>
+				<value ID="3mm Coroplast">3mm Coroplast</value>
+				<value ID="4mm Coroplast">4mm Coroplast</value>
+				<value ID="3mm Coroplast with dry erase coating">3mm Coroplast with dry erase coating</value>
+				<value ID="4mm Coroplast with dry erase coating">4mm Coroplast with dry erase coating</value>
+				<value ID="3mm Translucent/transparent Coroplast">3mm Translucent/transparent Coroplast</value>
+				<value ID="4mm Translucent/transparent Coroplast">4mm Translucent/transparent Coroplast</value>
+				<value ID="3/16&quot; Ultraboard">3/16&quot;Ultraboard</value>
+				<value ID="12 pt. C1S Card Stock">12 pt. C1S Card Stock</value>
+				<value ID="16 pt. C1S Card Stock">16 pt. C1S Card Stock</value>
+				<value ID="18 pt. C1S Card Stock">18 pt. C1S Card Stock</value>
+				<value ID="24 pt. C1S Card Stock">24 pt. C1S Card Stock</value>
+				<value ID="Permanent vinyl adhesive">Permanent vinyl adhesive</value>
+				<value ID="Semi-Permanent vinyl adhesive">Semi-Permanent vinyl adhesive</value>
+				<value ID="Removable vinyl adhesive">Removable vinyl adhesive</value>
+				<value ID="Permanent vinyl adhesive with overlaminate">Permanent vinyl adhesive with overlaminate</value>
+				<value ID="Semi-Permanent vinyl adhesive with overlaminate">Semi-Permanent vinyl adhesive with overlaminate</value>
+				<value ID="Removable vinyl adhesive with overlaminate">Removable vinyl adhesive with overlaminate</value>
+				<value ID="Magnetic Vinyl (.02)">Magnetic Vinyl (.02)</value>
+				<value ID="80# Text Matte/Cover">80# Text Matte/Cover</value>
+				<value ID="80# Text Gloss/Cover">80# Text Gloss/Cover</value>
+				<value ID="100# Text Matte/Cover ">100# Text Matte/Cover </value>
+				<value ID="100# Text Gloss/Cover ">100# Text Gloss/Cover </value>
+				<value ID="100# Text Gloss/Cover">100# Text Gloss/Cover</value>
+				<value ID="12 oz. Reinforced Vinyl Banner">12 oz. Reinforced Vinyl Banner</value>
+				<value ID="Other">Other</value>
+			</valueMap>
+		</field>
+		<field name="strColors" type="text" title="Colors">
+		    <valueMap>
+				<value ID="1LC">1LC</value>
+				<value ID="2CP">2CP</value>
+				<value ID="4CP">4CP</value>
+				<value ID="4CP + 1">4CP + 1</value>
+				<value ID="4CP + 2">4CP + 2</value>
+				<value ID="OTHER">OTHER</value>
+				<value ID="N/A">N/A</value>				
+			</valueMap>	
+		</field>
+		<field name="strSided" type="text" title="Sided">
+		    <valueMap>
+				<value ID="1">1</value>
+				<value ID="2">2</value>
+				<value ID="N/A">N/A</value>
+			</valueMap>	
+		</field>
+		<field name="strBleeds" type="text" title="Bleeds">
+		 <valueMap>
+				<value ID="NONE">NONE</value>
+				<value ID="ALL">ALL</value>
+				<value ID="1 SIDE">1 SIDE</value>
+				<value ID="2 SIDE">2 SIDE</value>	
+				<value ID="N/A">N/A</value>					
+			</valueMap>	
+		</field>	
+
+		<field name="strFinishing" type="text" title="Finishing">
+		    <valueMap>
+<value ID="Trim to Size">Trim to Size</value>
+<value ID="Trim to Size Diecut">Trim to Size Diecut</value>
+<value ID="Trim to Size Saddle Stitched">Trim to Size Saddle Stitched</value>
+<value ID="Trim to Size Grommets all 4 corners hemmed on all edges">Trim to Size Grommets all 4 corners hemmed on all edges</value>
+<value ID="Trim to Size Grommets all 4 corners hemmed on all edges with wind slits">Trim to Size Grommets all 4 corners hemmed on all edges with wind slits</value>
+<value ID="Other">Other</value>
+		    </valueMap>
+		</field>			
+		<field name="strMounting" type="text" title="Mounting" length="2000"/>
+		<field name="strProposedPrintFormat" type="text" title="Proposed Print Format">
+                   <valueMap>
+                                <value ID="Digital/Ink Jet">Digital/Ink Jet</value>
+                                <value ID="Flexography">Flexography</value>
+                                <value ID="Offset Lithography">Offset Lithography</value>
+                                <value ID="Screen">Screen</value>
+                    </valueMap>
+		</field>
+		<field name="strActualPrintFormat" type="text" title="Actual Print Format">
+              <valueMap>
+                                <value ID="Digital/Ink Jet">Digital/Ink Jet</value>
+                                <value ID="Flexography">Flexography</value>
+                                <value ID="Offset Lithography">Offset Lithography</value>
+                                <value ID="Screen">Screen</value>
+               </valueMap>
+		</field>
+		<field name="strAssociatedProductNumber" type="text" title="Associated Product Number" length="240"/>
+		<field name="strSpecialPacking" type="text" title="Special Packing" length="1000"/>
+		<field name="strSpecialHardwareNeeds" type="text" title="Special Hardware needs" length="1000"/>
+	
+		<field name="strSupplier" type="text" title="Supplier" />
+		<field name="strSupplierName" type="text" title="Supplier Name" />
+		<field name="strSupplierContact" type="text" title="Supplier Contact"/>
+		<field name="strSupplierContactEmail" type="text" title="Supplier Contact Email"/>
+		<field name="strSupplierContactPhone" type="text" title="Supplier Contact Phone"/>
+		<field name="strInventoryManager" type="text" title="Inventory Manager">
+			<valueMap>
+				<value ID="HH GLOBAL">HH Global</value>
+				<value ID="TEAM LOWES">Team Lowes</value>				
+			</valueMap>
+		</field>
+
+
+		<field name="strItemCatalogType" type="text" title="Item Catalog Type">
+			<valueMap>
+				<value ID="CWDP">CWDP (Archway Facility)</value>
+				<value ID="SPT">Spend Pass-Thru</value>
+				<value ID="IO">Information Only</value>
+				<value ID="MF">Mainframe</value>
+			</valueMap>
+		</field>
+		<field name="strOrderingInstructions" type="text" title="Ordering Instructions" length="1000"/>
+		<field name="strOwner" type="text" title="Owner"/>
+		<field name="strDefaultGLAC" type="text" title="Default GL A/C">
+			<valueMap>
+				<value ID="GL# 818000 - 92111501">GL# 818000 - 92111501 Display_Fixtures</value>
+			</valueMap>
+		</field>
+
+
+		<field name="strReplenish" type="text" title="Replenish ">
+			<valueMap>
+				<value ID="Y">Yes</value>
+				<value ID="N">No</value>
+			</valueMap>
+		</field>
+		<field name="intLowWaterMark" type="integer" title="Low Water Mark">
+			<validators>                
+                <validator type="regexp" expression="^([0-9]{0,10})?$" validateOnChange="true" errorMessage="Invalid Value only number allowed"/>
+            </validators>	
+		</field>
+		
+		<field name="intLeadTime" type="integer" title="Lead Time" >
+			<validators>                
+                <validator type="regexp" expression="^([0-9]{0,10})?$" validateOnChange="true" errorMessage="Invalid Value only number allowed"/>
+            </validators>	
+		</field>
+		<field name="strMarketSpecific" type="text" title="Market Specific">
+			<valueMap>
+				<value ID="Y">Yes</value>
+				<value ID="N">No</value>
+			</valueMap>
+		</field>
+		<field name="strMainframeSpecificInfo" type="text" title="Mainframe Specific Information"/>
+		<field name="strMarketSpecificExplanation" type="text" title="Market Specific Explanation"/>
+		<field name="strUOM" type="text" title="UOM">
+			<valueMap>
+				<value ID="EA">EA (Each)</value>
+				<value ID="BX">BOX</value>
+				<value ID="PK">PK (Pack)</value>
+				<value ID="KT">KIT</value>
+			</valueMap>
+		</field>
+		<field name="intShipUOMQty" type="integer" title="UOM Qty" length="10"/>
+
+		<field name="dblUnitCost" type="float" title="Unit Cost" length="13"/>
+		<field name="strReplacesReorderNumber" type="text" title="Replaces Re-order Number"/>
+		<field name="strAssortmentNumber" type="text" title="Assortment Number"/>
+		<field name="strModelNumber" type="text" title="Model Number"/>
+		<field name="strVendorVBUNumber" type="text" title="Vendor VBU Number"/>
+		<field name="strMainFramePCMItemNumber" type="text" title="Mainframe PCM Item Number"/>
+		<field name="intMaxStoreQty" type="integer" title="Max Store Qty" >
+			<validators>                
+                <validator type="regexp" expression="^([0-9]{0,11})?$" validateOnChange="true" errorMessage="Invalid Value only number allowed"/>
+            </validators>
+		</field>
+		<field name="intTotalRolloutQty" type="integer" title="Total Rollout Qty" >
+			<validators>                
+                <validator type="regexp" expression="^([0-9]{0,10})?$" validateOnChange="true" errorMessage="Invalid Value only number allowed"/>
+            </validators>
+		</field>
+		<field name="intReplenishQty" type="integer" title="Replenish Qty" >
+			<validators>                
+                <validator type="regexp" expression="^([0-9]{0,10})?$" validateOnChange="true" errorMessage="Invalid Value only number allowed"/>
+            </validators>
+		</field>
+		<field name="dtCatalogAvailableDate" type="date" title="Date Available in Catalog"/>
+		<field name="dtDiscontinueDate" type="date" title="Date Discontinued"/>
+		
+		<field name="strItemState" type="text" title="Item State">
+		<valueMap>
+			<value ID="N">New</value>
+			<value ID="S">Assigned</value>
+			<value ID="U">Audited</value>
+			<value ID="A">Activated</value>
+		</valueMap>
+		</field>
+		<field name="strDeletedBy" type="text" title="Deleted By"/>
+		<field name="dtDeletionDate" type="date" title="Deletion Date"/>
+		<field name="strUnDeletedBy" type="text" title="Undeleted By"/>
+		<field name="dtUnDeletionDate" type="date" title="Undeletion Date"/>
+		<field name="strAuditedBy" type="text" title="Audited By"/>
+		<field name="dtAuditedDate" type="date" title="Audited on"/>
+		<field name="strApprovedBy" type="text" title="Approved By"/>
+		<field name="dtApprovedDate" type="date" title="Approved On"/>
+		<field name="strAuditExportedBy" type="text" title="Exported By" />
+		<field name="dtAuditExportedOn" type="date" title="Exported On"/>
+		<field name="strCreatedBy"   type="text"   title="Created By"/> 
+        <field name="dtCreationDate" type="date"   title="Creation Date"/> 
+        <field name="strLastUpdateBy" type="text"  	title="Last Update By"/> 
+        <field name="dtLastUpdateDate" type="date" title="Last Update Date"/>
+			<field name="strSentForAuditBy" type="text" title="Sent for Audit By"/>
+		<field name="dtSentForAuditDate" type="date" title="Sent for Audit On"/>
+	</fields>
+	
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchItem"/>
+		<operationBinding operationType="custom"  operationId="updateItem" archServerMethod="updateItem"/>
+		<operationBinding operationType="custom"  operationId="updateAllItems" archServerMethod="updateAllItems"/>
+		
+		
+		<!--  for Item Assign  -->
+	    <operationBinding operationType="add"     operationId="addItemAssign" archServerMethod="com.archway.lowes.dmi.LWItemAssignDMI.saveItem" />
+	    <operationBinding operationType="update"  operationId="updateItemAssign" archServerMethod="com.archway.lowes.dmi.LWItemAssignDMI.updateItem" />
+		<operationBinding operationType="custom"  operationId="cloneItem" archServerMethod="com.archway.lowes.dmi.LWItemAssignDMI.cloneItem" />
+		
+		<!--  for Item Assign  -->
+		<operationBinding operationType="custom" operationId="updateAudit"  archServerMethod="com.archway.lowes.dmi.LWItemAuditDMI.updateItem"/> 	
+		
+		<!-- Operation for Item Approve -->
+		<operationBinding operationType="custom"  operationId="updateItemApprove" archServerMethod="com.archway.lowes.dmi.LWItemApproveDMI.saveItem" />
+		<operationBinding operationType="custom"  operationId="groupItemApprove" archServerMethod="com.archway.lowes.dmi.LWItemApproveDMI.groupSaveItem" />
+	</operationBindings>
+</DataSource>

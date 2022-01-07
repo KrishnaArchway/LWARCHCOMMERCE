@@ -1,0 +1,28 @@
+<DataSource ID="LWInstoreResets" serverConstructor="com.archway.smartgwt.client.BatchDataSource" archServerObject="com.archway.lowes.dmi.LWInstoreResetsDMI">
+	<fields>
+		<field name="strActionMenu"         type="text" />
+		<field name="strProjectCode"        type="text" title="Reset#"/>
+		<field name="strProjectName"   		type="text" title="Reset Name"/>
+		<field name="strReorderNumber"   	type="text" title="ReorderNumber"/>
+		<field name="strDivision" 			type="text" title="Department"/>
+		<field name="dblEstHrs" 			type="integer" title="Hours"/>
+		<field name="strLaborType" 			type="text" title="Labor Type"/>
+		<field name="strFiscalWeekDesc" 			type="text"  title="Fiscal Week">
+			<valueMap>
+			</valueMap>		
+		</field>
+		 <field name="lngFiscalWeek" 		type="text" hidden="true"/> 
+		<field name="intScheduleWeek" 		type="text" hidden="true"/>
+		<field name="strCarrier" 		type="text" hidden="true">
+			<valueMap>
+			</valueMap>
+		</field>
+	</fields>
+	<operationBindings>
+		<operationBinding operationType="fetch" archServerMethod="fetchResets" />
+		<operationBinding operationType="custom" operationId="fiscalData" archServerMethod="fetchFiscalData" /> 
+		<operationBinding operationType="fetch" operationId="searchData" archServerMethod="searchData" /> 
+		<operationBinding operationType="custom" operationId="fetchAllWeeks" archServerMethod="fetchAllWeeks" />
+		<operationBinding operationType="custom" operationId="checkSession" archServerMethod="checkSessionAttributes" />
+	</operationBindings>	
+</DataSource>

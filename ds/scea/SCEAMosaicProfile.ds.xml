@@ -1,0 +1,28 @@
+<DataSource
+	ID="SCEAMosaicProfile" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEAMosaicProfileDMI">	
+	
+	<fields>
+			<field name="strMosaicRep"  		 	type="text"       title="Mosaic Rep"/>
+	  		<field name="strMosaicTerritoryName"    type="text"       title="Mosaic Territory Name"/>
+			<field name="strMosaicDistrictManager"  type="text"       title="Mosaic District Manager"/>
+			<field name="strDMPhone"  				type="text"       title="Mosaic District Manager Phone"/>
+			<field name="strDMEmail"  				type="text"       title="Mosaic District Manager Email"/>
+			<field name="strMosaicRegionManager"    type="text"       title="Mosaic Region Manager"/>
+			<field name="strRMPhone"    			type="text"       title="Mosaic Region Manager Phone"/>
+			<field name="strRMEmail"    			type="text"       title="Mosaic Region Manager Email"/>
+			<field name="strMosaicNationalManager" 	type="text"       title="Mosaic National Manager"/>			
+			<field name="strChain" 		 			type="text"       title="Chain"/>
+			<field name="strMatsSequenceID"     	type="text"       title="MATS Sequence ID"/>
+			<field name="strStoreNumber"     		type="text"       title="Store Number"/>
+					
+	</fields>	
+	
+	
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchMosaicProfile"/>
+		
+	</operationBindings>
+</DataSource>

@@ -1,0 +1,18 @@
+<DataSource
+    ID="FWLabel"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.fw.dmi.FWLabelDMI"
+    >
+  
+    <fields>
+    
+    	<field name="strLabelKey" type="text" hidden ="true" />
+    	
+    	<field name="strLabelValue" type="text" hidden ="true" />	
+    
+    </fields>
+    
+    <operationBindings>
+    	<operationBinding operationType="fetch"  archServerMethod="fetchLabels" />   	
+    </operationBindings>
+</DataSource>

@@ -1,0 +1,29 @@
+<DataSource
+	ID="SCEARecentCases" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEARecentCasesDMI" >	
+	<fields>
+	<field name="strActionMenu" 	 	  type="image"     title=" " size="20px" />
+	<field name="dtCaseDate" 			type="text" title="Case Date"/>
+	<field name="dtCaseResDate" 			type="text" title="Case Resolution Date"/>
+	 <field name="strCaseNum" 			type="text" 	title="Case #"  primaryKey="true"/>
+	 <field name="strAgent" 			type="text" 	title="Agent"/>
+	 <field name="strStoreName" 		type="text" 	title="Store Name"/>
+	 <field name="strCaller" 			type="text" 	title="caller"/>
+	 <field name="strCaseSubject" 		type="text" 	title="Case Subject"/>
+	 <field name="strCaseStatus" 		type="text" 	title="Case Status"/>
+	 <field name="strCaseResolution" 	type="text" 	title="Resolution"/>
+	 <field name="strRelatedOrderNum" 	type="text" 	title="Related Order"/>
+	 <field name="strCaseNote" 		type="text" 	title="Case Notes"/>	 
+	 <field name="strResolutionNotes" 		type="text" 	title="Resolution Notes"/>
+
+	
+	</fields>
+	
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchRecentCases"/>
+	</operationBindings>
+</DataSource>
+
+

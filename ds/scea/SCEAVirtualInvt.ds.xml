@@ -1,0 +1,20 @@
+<DataSource
+ID="SCEAVirtualInvt" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEAVirtualInventoryDMI" >
+	
+	<fields>
+		<field name="strSKU" type="text" title="SKU"/>
+		<field name="strDescription" type="text" title="Description"/>
+		<field name="intTotalQtyAllowed" type="text" title="Total Qty Allowed"/>
+		<field name="intQtyOnHand" type="text" title="Qty on Hand"/>
+		<field name="intQtyOutstanding" type="text" title="Qty Outstanding"/>
+		<field name="intQtyStolen" type="text" title="Qty Stolen"/>
+		<field name="intQtyReturned" type="text" title="Qty Returned"/>
+		<field name="intQtyShipped" type="text" title="Qty Shipped"/>
+	</fields>
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchVirtualInventory"/>
+	</operationBindings>
+</DataSource>

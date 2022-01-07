@@ -1,0 +1,16 @@
+<DataSource
+    ID="AWCUserSecurityProperties"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.core.dmi.AWCSecurityDMI"
+    >
+  
+    <fields>
+    	<field name="strLabel" type="text" primary="true"/>
+    	
+    	<field name="strValue" type="text"/>
+    </fields>
+    
+    <operationBindings>
+    	<operationBinding operationType="fetch"  archServerMethod="fetchUserProperties" />   	
+    </operationBindings>
+</DataSource>

@@ -1,0 +1,59 @@
+<DataSource
+    ID="ESCheckOut"
+    serverConstructor="com.archway.smartgwt.client.BatchDataSource" 
+    archServerObject="com.archway.estore.dmi.ESCheckOutDMI"
+    >
+      <fields>
+		<field name="intClientId" primaryKey="true"/> <!-- TODO Need to remove Primary Key -->
+		<field name="strPriority"/>
+		<field name="strShippingSpeed"/>
+		<field name="strShipToLoction"/>
+		<field name="strCostCenter"/>
+		<field name="dtFutureDate" type="date"/>
+		<field name="strPickingInstruction"/>
+		<field name="strPackingInstruction"/>
+		<field name="strComments"/>
+		<field name="lngCategoryId"/>
+		<field name="strCategoryDescription"/>
+		
+		<!-- Fields for Address Form  -->
+		<field name="strFirstName" />
+		<field name="strLastName" />
+		<field name="strAttentionToFirst" />
+		<field name="strAttentionToLast" />
+		<field name="strCompanyName" />
+		<field name="strAddressLine1" />
+		<field name="strAddressLine2" />
+		<field name="strCountry" />
+		<field name="strPostalCode" />
+		<field name="strCity" />
+		<field name="strState" />
+		<field name="strTelNumber" />
+		<field name="strEmailAddress" />
+		
+		<field name="strStatusFlag" />
+		<field name="strCreatedBy" />
+		<field name="dtCreationDate" />
+		<field name="strLastUpdateBy" />
+		<field name="dtLastUpdateDate" />
+		
+		
+		<!-- <field name="strOrderNumber" title="Order#" width="85" type="text" foreignKey="ESOrderStatus.strOrderNumber" hidden="true"/>
+		<field name="lngItemId" title="Order Item Id" width="125" type="long" primaryKey="true" hidden="true"/>
+		<field name="strStockNumber" title="Item#" width="155" type="text" />
+		<field name="strStockNumberDesc" title="Description" width="400" type="text" />
+		<field name="strUOM" title="UOM" width="150" type="text" />
+		<field name="dblPrice" title="Price USD" width="85" type="text" />
+		<field name="lngRemaininggQty" title="Remaining Qty" width="85" type="text" hidden="true"/>
+		<field name="lngOrigionalQty" title="Origional Qty" width="85" type="text" hidden="true" />
+		<field name="lngAvailableQty" title="Available Qty" width="85" type="text" hidden="true"/>
+		<field name="lngQuantity" title="Quantity" width="85" type="text" />
+		<field name="dblTotal" title="Total" width="85" type="text" /> -->
+	
+	</fields>
+    
+    <operationBindings>
+   	 <operationBinding operationType="add"    operationId="submitOrder" archServerMethod="doCheckout" />
+    </operationBindings>
+    
+</DataSource>

@@ -1,0 +1,60 @@
+<DataSource 
+	ID="SCMUser" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+		archServerObject="com.archway.estore.dmi.ESAddressBookDMI">
+	
+	<fields>
+	    <field name="strActions" title="Action" width="100" />		
+		<field name="strValue" title="#User" width="150" type="text" hidden="false" />
+		<field name="lngUserId" title="Value" width="200" type="Integer" hidden="true" />	
+		<field name="strUserCode" title="UserCode" width="150" type="text" hidden="true"/>
+		<field name="strFirstName" title="FirstName" width="200" type="text" hidden="false"/>
+		<field name="strMiddleInitial" title="MiddleInitial" width="200" type="text" hidden="true"/>
+		<field name="strLastName" title="LastName" width="200" type="text" hidden="true"/>
+		<field name="strCompany" title="Company" width="200" type="text" hidden="false"/>
+		<field name="strUserType" title="UserType" width="150" type="text" hidden="false"/>				
+		<field name="lngDepartmentId" title="DepartmentId" width="200" type="Integer" hidden="true"/>		
+		<field name="strParentUserCode" title="ParentUserCode" width="100" hidden="true"/>		
+		<field name="strAddressLine1" title="AddressLine" width="200" type="text" hidden="false" />
+		<field name="strAddressLine2" title="AddressLine2" width="200" type="text" hidden="true"/>
+		<field name="strAddressLine3" title="AddressLine3" width="200" type="text" hidden="true"/>
+		<field name="strCity" title="City" width="200" type="text" hidden="true"/>
+		<field name="strState" title="State" width="200" type="text" hidden="true"/>		
+		<field name="strZipCode" title="ZipCode" width="200" type="text" hidden="true"/>
+		<field name="strCountry" title="Country" width="200" type="text" hidden="true"/>
+		<field name="strSecAddressLine1" title="AddressLine" width="200" type="text" hidden="false" />
+		<field name="strSecAddressLine2" title="AddressLine2" width="200" type="text" hidden="true"/>
+		<field name="strSecAddressLine3" title="AddressLine3" width="200" type="text" hidden="true"/>
+		<field name="strSecCity" title="City" width="200" type="text" hidden="true"/>
+		<field name="strSecState" title="State" width="200" type="text" hidden="true"/>		
+		<field name="strSecZipCode" title="ZipCode" width="200" type="text" hidden="true"/>
+		<field name="strSecCountry" title="Country" width="200" type="text" hidden="true"/>
+		<field name="strCommercialFlag" title="CommercialFlag" width="200" type="text" hidden="true"/>
+		<field name="strTelNumber" title="TelNumber" width="200" type="text" hidden="true"/>
+		<field name="strFaxNumber" title="FaxNumber" width="200" type="text" hidden="true"/>
+		<field name="strEmailAddress" title="EmailAddress" width="200" type="text" hidden="true"/>
+		<field name="strLoginId" title="LoginId" width="200" type="text" hidden="true"/>
+		<field name="strEncryptedPassword" title="EncryptedPassword" width="200" type="text" hidden="true"/>
+		<field name="strTaxExemptFlag" title="TaxExemptFlag" width="200" type="text" hidden="true"/>
+		<field name="strComments" title="Comments" width="200" type="text" hidden="true"/>
+		<field name="strProtectedFlag" title="ProtectedFlag" width="200" type="text" hidden="true"/>
+		<field name="lngCostCenterId" title="CostCenterId" width="200" type="Integer" hidden="true"/>
+		<field name="intRoleId" title="RoleId" width="200" type="Integer" hidden="true"/>	
+		<field name="strCostCenterCode" title="CostCenterCode" width="200" type="text" hidden="true"/>
+		<field name="strCostCenterDesc" title="CostCenterDesc" width="200" type="text" hidden="true"/>	 
+	</fields>
+	
+	<operationBindings>
+		<!-- <operationBinding operationType="fetch" archServerMethod="fetchAddressDetail" />-->	
+		
+		<!-- Start : This operation Binding is for Account Informations -->
+		<operationBinding operationType="fetch" operationId="fetchAccountInfo" archServerMethod="com.archway.estore.dmi.ESAccountInformationDMI.fetchUserList" />
+		<operationBinding operationType="custom" operationId="saveAccountInfo" archServerMethod="com.archway.estore.dmi.ESAccountInformationDMI.saveUsers" />
+		<operationBinding operationType="update" operationId="updateAccountInfo" archServerMethod="com.archway.estore.dmi.ESAccountInformationDMI.updateUsers" />
+		<!-- End : This operation Binding is for Account Informations -->
+		
+		<operationBinding operationType="fetch" archServerMethod="fetchUserList" />
+		<operationBinding operationType="add" archServerMethod="addNewLocations" />
+		<operationBinding operationType="fetch" operationId="fetchUserListFromDB" archServerMethod="fetchUserListFromDB" />	
+	</operationBindings>
+</DataSource>	

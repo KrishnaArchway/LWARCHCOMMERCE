@@ -1,0 +1,30 @@
+<DataSource
+	ID="SCEAUserInfo" 
+	serverConstructor="com.archway.smartgwt.client.BatchDataSource"
+	archServerObject="com.archway.scea.dmi.SCEAUserInfoDMI">
+	
+	<fields>
+			<field name="strBussinessPartner"  type="text"       title="BUsinessPartnerID"/>
+			<field name="lngBpID"  type="text"       title="BUsinessPartnerID"/>
+	  		<field name="strName"                type="text"       title="Name"/>
+			<field name="strAddressOne"            type="text"     title="Address1"/>
+			<field name="strAddressTwo"            type="text"     title="Address2"/>			
+      		<field name="strCityStateZipCountry" type="text"       title="CityStateZipCountry"/>
+			<field name="strBpType"              type="text"       title="BPType"/>
+			<field name="strBPTypeDescription"   type="text"       title="BPTypeDescription"/>
+		   	<field name="strTerritory"           type="text"       title="Territory"/>
+      		<field name="strTID"         	     type="text"       title="TID"/>
+			<field name="strDistrictMgr"         type="text"       title="DistrictManager"/>
+			<field name="strDistrict"            type="text"       title="District"/>
+			<field name="strNationalMgr"         type="text"       title="NationalManager"/>
+			<field name="strRegion"              type="text"       title="Region"/>
+			<field name="strPhone"              type="text"       title="Phone"/>
+			<field name="strEmail"              type="text"       title="EMail"/>
+	</fields>	
+	
+	<operationBindings>
+		<!--  generic -->
+		<operationBinding operationType="fetch"   archServerMethod="fetchUserInfo"/>
+		
+	</operationBindings>
+</DataSource>
